@@ -1,0 +1,16 @@
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\EzFileEncrypt.exe
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\EzFileEncrypt.deps.json
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\EzFileEncrypt.runtimeconfig.json
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\EzFileEncrypt.dll
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\EzFileEncrypt.pdb
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.Form1.resources
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.vbproj.GenerateResource.cache
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.AssemblyInfoInputs.cache
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.AssemblyInfo.vb
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.vbproj.CoreCompileInputs.cache
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.dll
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\refint\EzFileEncrypt.dll
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.pdb
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.genruntimeconfig.cache
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\ref\EzFileEncrypt.dll
