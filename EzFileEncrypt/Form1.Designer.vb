@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
@@ -49,6 +50,11 @@ Partial Class Form1
         Label4 = New Label()
         Label5 = New Label()
         PictureBox2 = New PictureBox()
+        EncryptBackgoundWorker = New ComponentModel.BackgroundWorker()
+        outputlog_list = New ListBox()
+        DecryptBackgoundWorker = New ComponentModel.BackgroundWorker()
+        MoveListBox = New Timer(components)
+        SaveLogBtn = New Button()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -245,7 +251,7 @@ Partial Class Form1
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(16, 337)
+        PictureBox1.Location = New Point(16, 442)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(36, 36)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -255,7 +261,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(63, 338)
+        Label4.Location = New Point(63, 443)
         Label4.Name = "Label4"
         Label4.Size = New Size(85, 15)
         Label4.TabIndex = 3
@@ -264,7 +270,7 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(63, 354)
+        Label5.Location = New Point(63, 459)
         Label5.Name = "Label5"
         Label5.Size = New Size(166, 15)
         Label5.TabIndex = 4
@@ -280,11 +286,42 @@ Partial Class Form1
         PictureBox2.TabIndex = 5
         PictureBox2.TabStop = False
         ' 
+        ' EncryptBackgoundWorker
+        ' 
+        ' 
+        ' outputlog_list
+        ' 
+        outputlog_list.FormattingEnabled = True
+        outputlog_list.ItemHeight = 15
+        outputlog_list.Location = New Point(16, 341)
+        outputlog_list.Name = "outputlog_list"
+        outputlog_list.Size = New Size(343, 94)
+        outputlog_list.TabIndex = 6
+        ' 
+        ' DecryptBackgoundWorker
+        ' 
+        ' 
+        ' MoveListBox
+        ' 
+        MoveListBox.Enabled = True
+        MoveListBox.Interval = 1
+        ' 
+        ' SaveLogBtn
+        ' 
+        SaveLogBtn.Location = New Point(271, 441)
+        SaveLogBtn.Name = "SaveLogBtn"
+        SaveLogBtn.Size = New Size(88, 33)
+        SaveLogBtn.TabIndex = 7
+        SaveLogBtn.Text = "Save Log"
+        SaveLogBtn.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(375, 378)
+        ClientSize = New Size(375, 486)
+        Controls.Add(SaveLogBtn)
+        Controls.Add(outputlog_list)
         Controls.Add(PictureBox2)
         Controls.Add(Label5)
         Controls.Add(Label4)
@@ -293,12 +330,12 @@ Partial Class Form1
         Controls.Add(TabControl1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
-        MaximumSize = New Size(391, 417)
+        MaximumSize = New Size(391, 525)
         MinimizeBox = False
-        MinimumSize = New Size(391, 417)
+        MinimumSize = New Size(391, 525)
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Ez File Encrypt"
+        Text = "Ez File Encrypt | https://github.com/zv8001/EzFileEncrypt"
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
@@ -336,5 +373,10 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents EncryptBackgoundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents outputlog_list As ListBox
+    Friend WithEvents DecryptBackgoundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents MoveListBox As Timer
+    Friend WithEvents SaveLogBtn As Button
 
 End Class

@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\source\\repos\\ezfileencrypt\\ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,40 +34,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EzFileEncrypt",
-              "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\EzFileEncrypt.vbproj",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\EzFileEncrypt.vbproj",
-              "ToolTip": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\EzFileEncrypt.vbproj",
-              "RelativeToolTip": "EzFileEncrypt\\EzFileEncrypt.vbproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
-              "WhenOpened": "2024-07-05T03:10:31.023Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MIT_license.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
-              "ToolTip": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
-              "RelativeToolTip": "EzFileEncrypt\\MIT_license.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-05T02:53:33.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MIT_license.vb [Design]",
               "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
@@ -79,20 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Form1.vb",
               "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
               "ToolTip": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAE0AAAAAAAAAAAD4v2EAAAAAAAAA",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAiwFcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T21:20:30.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.vb [Design]",
               "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
@@ -104,7 +79,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MIT_license.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
+              "ToolTip": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
+              "RelativeToolTip": "EzFileEncrypt\\MIT_license.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAA6wAIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-05T02:53:33.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "EzFileEncrypt",
+              "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\EzFileEncrypt.vbproj",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\EzFileEncrypt.vbproj",
+              "ToolTip": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\EzFileEncrypt.vbproj",
+              "RelativeToolTip": "EzFileEncrypt\\EzFileEncrypt.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2024-07-05T03:10:31.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Form1.resx",
               "DocumentMoniker": "C:\\Users\\denve\\source\\repos\\EzFileEncrypt\\EzFileEncrypt\\Form1.resx",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.resx",
