@@ -14,3 +14,5 @@ C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows
 C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.pdb
 C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.genruntimeconfig.cache
 C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\ref\EzFileEncrypt.dll
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.MIT_license.resources
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.Resources.resources

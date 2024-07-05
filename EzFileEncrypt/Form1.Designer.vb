@@ -22,21 +22,20 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        Label8 = New Label()
         TextBox3 = New TextBox()
-        Button3 = New Button()
-        Label4 = New Label()
-        TextBox2 = New TextBox()
-        Button2 = New Button()
+        Encryptbtn = New Button()
         Label3 = New Label()
-        TextBox1 = New TextBox()
-        Button1 = New Button()
+        Inputfile_txt = New TextBox()
+        SelInputFileBtn = New Button()
         Label2 = New Label()
         TabPage2 = New TabPage()
+        Label9 = New Label()
         TextBox4 = New TextBox()
         Button4 = New Button()
-        Label5 = New Label()
         Label6 = New Label()
         TextBox6 = New TextBox()
         Button6 = New Button()
@@ -46,9 +45,15 @@ Partial Class Form1
         SaveFileDialog1 = New SaveFileDialog()
         SaveFileDialog2 = New SaveFileDialog()
         OpenFileDialog2 = New OpenFileDialog()
+        PictureBox1 = New PictureBox()
+        Label4 = New Label()
+        Label5 = New Label()
+        PictureBox2 = New PictureBox()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -63,14 +68,12 @@ Partial Class Form1
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(Label8)
         TabPage1.Controls.Add(TextBox3)
-        TabPage1.Controls.Add(Button3)
-        TabPage1.Controls.Add(Label4)
-        TabPage1.Controls.Add(TextBox2)
-        TabPage1.Controls.Add(Button2)
+        TabPage1.Controls.Add(Encryptbtn)
         TabPage1.Controls.Add(Label3)
-        TabPage1.Controls.Add(TextBox1)
-        TabPage1.Controls.Add(Button1)
+        TabPage1.Controls.Add(Inputfile_txt)
+        TabPage1.Controls.Add(SelInputFileBtn)
         TabPage1.Controls.Add(Label2)
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
@@ -80,6 +83,15 @@ Partial Class Form1
         TabPage1.Text = "Encrypt"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(3, 120)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(334, 45)
+        Label8.TabIndex = 11
+        Label8.Text = "Using ultra secure AES encryption technology so not even the " & vbCrLf & "government can see your files guided you have a strong " & vbCrLf & "enough password." & vbCrLf
+        ' 
         ' TextBox3
         ' 
         TextBox3.Location = New Point(6, 178)
@@ -88,40 +100,14 @@ Partial Class Form1
         TextBox3.Size = New Size(331, 23)
         TextBox3.TabIndex = 10
         ' 
-        ' Button3
+        ' Encryptbtn
         ' 
-        Button3.Location = New Point(6, 207)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(331, 23)
-        Button3.TabIndex = 9
-        Button3.Text = "Encrypt"
-        Button3.UseVisualStyleBackColor = True
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("VHS Mono Caps", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(6, 114)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(133, 16)
-        Label4.TabIndex = 8
-        Label4.Text = "select output file"
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(6, 133)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(243, 23)
-        TextBox2.TabIndex = 7
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(255, 133)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(82, 23)
-        Button2.TabIndex = 6
-        Button2.Text = "..."
-        Button2.UseVisualStyleBackColor = True
+        Encryptbtn.Location = New Point(6, 207)
+        Encryptbtn.Name = "Encryptbtn"
+        Encryptbtn.Size = New Size(331, 23)
+        Encryptbtn.TabIndex = 9
+        Encryptbtn.Text = "Encrypt"
+        Encryptbtn.UseVisualStyleBackColor = True
         ' 
         ' Label3
         ' 
@@ -133,21 +119,21 @@ Partial Class Form1
         Label3.TabIndex = 5
         Label3.Text = "select input file"
         ' 
-        ' TextBox1
+        ' Inputfile_txt
         ' 
-        TextBox1.Location = New Point(6, 85)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(243, 23)
-        TextBox1.TabIndex = 4
+        Inputfile_txt.Location = New Point(6, 85)
+        Inputfile_txt.Name = "Inputfile_txt"
+        Inputfile_txt.Size = New Size(243, 23)
+        Inputfile_txt.TabIndex = 4
         ' 
-        ' Button1
+        ' SelInputFileBtn
         ' 
-        Button1.Location = New Point(255, 85)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(82, 23)
-        Button1.TabIndex = 3
-        Button1.Text = "..."
-        Button1.UseVisualStyleBackColor = True
+        SelInputFileBtn.Location = New Point(255, 85)
+        SelInputFileBtn.Name = "SelInputFileBtn"
+        SelInputFileBtn.Size = New Size(82, 23)
+        SelInputFileBtn.TabIndex = 3
+        SelInputFileBtn.Text = "..."
+        SelInputFileBtn.UseVisualStyleBackColor = True
         ' 
         ' Label2
         ' 
@@ -161,9 +147,9 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(Label9)
         TabPage2.Controls.Add(TextBox4)
         TabPage2.Controls.Add(Button4)
-        TabPage2.Controls.Add(Label5)
         TabPage2.Controls.Add(Label6)
         TabPage2.Controls.Add(TextBox6)
         TabPage2.Controls.Add(Button6)
@@ -173,8 +159,17 @@ Partial Class Form1
         TabPage2.Padding = New Padding(3)
         TabPage2.Size = New Size(343, 242)
         TabPage2.TabIndex = 1
-        TabPage2.Text = "TabPage2"
+        TabPage2.Text = "Decrypt"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(6, 123)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(334, 45)
+        Label9.TabIndex = 20
+        Label9.Text = "Using ultra secure AES encryption technology so not even the " & vbCrLf & "government can see your files guided you have a strong " & vbCrLf & "enough password." & vbCrLf
         ' 
         ' TextBox4
         ' 
@@ -193,25 +188,15 @@ Partial Class Form1
         Button4.Text = "Decrypt"
         Button4.UseVisualStyleBackColor = True
         ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("VHS Mono Caps", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(6, 116)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(133, 16)
-        Label5.TabIndex = 17
-        Label5.Text = "select output file"
-        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("VHS Mono Caps", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label6.Location = New Point(6, 68)
         Label6.Name = "Label6"
-        Label6.Size = New Size(126, 16)
+        Label6.Size = New Size(182, 16)
         Label6.TabIndex = 14
-        Label6.Text = "select input file"
+        Label6.Text = "select EzFileEncrypt file"
         ' 
         ' TextBox6
         ' 
@@ -242,10 +227,10 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("PMingLiU-ExtB", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("MS Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(12, 19)
         Label1.Name = "Label1"
-        Label1.Size = New Size(221, 32)
+        Label1.Size = New Size(270, 33)
         Label1.TabIndex = 1
         Label1.Text = "EZ File Encrypt"
         ' 
@@ -257,47 +242,99 @@ Partial Class Form1
         ' 
         OpenFileDialog2.FileName = "OpenFileDialog2"
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(16, 337)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(36, 36)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(63, 338)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(85, 15)
+        Label4.TabIndex = 3
+        Label4.Text = "Made by zv800"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(63, 354)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(166, 15)
+        Label5.TabIndex = 4
+        Label5.Text = "licensed under the MIT license"
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = My.Resources.Resources.Gakuseisean_Ivista_2_Alarm_Padlock_256
+        PictureBox2.Location = New Point(299, 19)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(60, 50)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 5
+        PictureBox2.TabStop = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(375, 343)
+        ClientSize = New Size(375, 378)
+        Controls.Add(PictureBox2)
+        Controls.Add(Label5)
+        Controls.Add(Label4)
+        Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Controls.Add(TabControl1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        MaximizeBox = False
+        MaximumSize = New Size(391, 417)
+        MinimizeBox = False
+        MinimumSize = New Size(391, 417)
         Name = "Form1"
-        Text = "Form1"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Ez File Encrypt"
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Inputfile_txt As TextBox
+    Friend WithEvents SelInputFileBtn As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Encryptbtn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents SaveFileDialog2 As SaveFileDialog
     Friend WithEvents OpenFileDialog2 As OpenFileDialog
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 
 End Class

@@ -1,0 +1,2 @@
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\win-x86\EzFileEncrypt.pdb
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\win-x86\EzFileEncrypt.exe

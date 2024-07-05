@@ -1,0 +1,5 @@
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\EzFileEncrypt.exe
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\EzFileEncrypt.dll
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\EzFileEncrypt.deps.json
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\EzFileEncrypt.runtimeconfig.json
+C:\Users\denve\source\repos\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\EzFileEncrypt.pdb
