@@ -34,6 +34,7 @@ Partial Class Form1
         SelInputFileBtn = New Button()
         Label2 = New Label()
         TabPage2 = New TabPage()
+        DecryptusinglegacyCHK = New CheckBox()
         Label9 = New Label()
         TextBox4 = New TextBox()
         Button4 = New Button()
@@ -41,6 +42,13 @@ Partial Class Form1
         TextBox6 = New TextBox()
         Button6 = New Button()
         Label7 = New Label()
+        TabPage3 = New TabPage()
+        RichTextBox2 = New RichTextBox()
+        LinkLabel1 = New LinkLabel()
+        Label13 = New Label()
+        RichTextBox1 = New RichTextBox()
+        Label12 = New Label()
+        Label11 = New Label()
         Label1 = New Label()
         OpenFileDialog1 = New OpenFileDialog()
         SaveFileDialog1 = New SaveFileDialog()
@@ -56,11 +64,11 @@ Partial Class Form1
         MoveListBox = New Timer(components)
         SaveLogBtn = New Button()
         CheckIfEncryptIsBusy = New Timer(components)
-        DecryptusinglegacyCHK = New CheckBox()
         Label10 = New Label()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
+        TabPage3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -69,6 +77,7 @@ Partial Class Form1
         ' 
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
+        TabControl1.Controls.Add(TabPage3)
         TabControl1.Location = New Point(12, 65)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
@@ -77,6 +86,7 @@ Partial Class Form1
         ' 
         ' TabPage1
         ' 
+        TabPage1.BorderStyle = BorderStyle.Fixed3D
         TabPage1.Controls.Add(Label8)
         TabPage1.Controls.Add(TextBox3)
         TabPage1.Controls.Add(Encryptbtn)
@@ -156,6 +166,7 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
+        TabPage2.BorderStyle = BorderStyle.Fixed3D
         TabPage2.Controls.Add(DecryptusinglegacyCHK)
         TabPage2.Controls.Add(Label9)
         TabPage2.Controls.Add(TextBox4)
@@ -171,6 +182,16 @@ Partial Class Form1
         TabPage2.TabIndex = 1
         TabPage2.Text = "Decrypt"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' DecryptusinglegacyCHK
+        ' 
+        DecryptusinglegacyCHK.AutoSize = True
+        DecryptusinglegacyCHK.Location = New Point(6, 116)
+        DecryptusinglegacyCHK.Name = "DecryptusinglegacyCHK"
+        DecryptusinglegacyCHK.Size = New Size(254, 19)
+        DecryptusinglegacyCHK.TabIndex = 22
+        DecryptusinglegacyCHK.Text = "Decrypt using legacy .EZFileEncrypt Format"
+        DecryptusinglegacyCHK.UseVisualStyleBackColor = True
         ' 
         ' Label9
         ' 
@@ -234,6 +255,79 @@ Partial Class Form1
         Label7.Size = New Size(119, 32)
         Label7.TabIndex = 11
         Label7.Text = "DECRYPT"
+        ' 
+        ' TabPage3
+        ' 
+        TabPage3.BorderStyle = BorderStyle.Fixed3D
+        TabPage3.Controls.Add(RichTextBox2)
+        TabPage3.Controls.Add(LinkLabel1)
+        TabPage3.Controls.Add(Label13)
+        TabPage3.Controls.Add(RichTextBox1)
+        TabPage3.Controls.Add(Label12)
+        TabPage3.Controls.Add(Label11)
+        TabPage3.Location = New Point(4, 24)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Size = New Size(343, 242)
+        TabPage3.TabIndex = 2
+        TabPage3.Text = "About"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' RichTextBox2
+        ' 
+        RichTextBox2.Location = New Point(3, 157)
+        RichTextBox2.Name = "RichTextBox2"
+        RichTextBox2.Size = New Size(337, 58)
+        RichTextBox2.TabIndex = 28
+        RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Location = New Point(103, 218)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(228, 15)
+        LinkLabel1.TabIndex = 27
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "https://github.com/zv8001/EzFileEncrypt/"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label13.Location = New Point(3, 220)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(79, 13)
+        Label13.TabIndex = 26
+        Label13.Text = "(c) ZV800 2024"
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.BorderStyle = BorderStyle.None
+        RichTextBox1.Location = New Point(3, 58)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(337, 95)
+        RichTextBox1.TabIndex = 25
+        RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label12.Location = New Point(18, 42)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(39, 13)
+        Label12.TabIndex = 24
+        Label12.Text = "v 2.1.0"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("MS Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Location = New Point(12, 12)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(270, 33)
+        Label11.TabIndex = 24
+        Label11.Text = "EZ File Encrypt"
         ' 
         ' Label1
         ' 
@@ -327,16 +421,6 @@ Partial Class Form1
         CheckIfEncryptIsBusy.Enabled = True
         CheckIfEncryptIsBusy.Interval = 1
         ' 
-        ' DecryptusinglegacyCHK
-        ' 
-        DecryptusinglegacyCHK.AutoSize = True
-        DecryptusinglegacyCHK.Location = New Point(6, 116)
-        DecryptusinglegacyCHK.Name = "DecryptusinglegacyCHK"
-        DecryptusinglegacyCHK.Size = New Size(254, 19)
-        DecryptusinglegacyCHK.TabIndex = 22
-        DecryptusinglegacyCHK.Text = "Decrypt using legacy .EZFileEncrypt Format"
-        DecryptusinglegacyCHK.UseVisualStyleBackColor = True
-        ' 
         ' Label10
         ' 
         Label10.AutoSize = True
@@ -374,6 +458,8 @@ Partial Class Form1
         TabPage1.PerformLayout()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
+        TabPage3.ResumeLayout(False)
+        TabPage3.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -414,5 +500,12 @@ Partial Class Form1
     Friend WithEvents CheckIfEncryptIsBusy As Timer
     Friend WithEvents DecryptusinglegacyCHK As CheckBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents RichTextBox2 As RichTextBox
 
 End Class

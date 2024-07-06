@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\ezfileencrypt.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -19,22 +23,18 @@
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MIT_license.vb [Design]",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
@@ -54,20 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.vb",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
               "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAALMAAABhAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAmwFMAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T21:20:30.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.vb [Design]",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
@@ -79,20 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MIT_license.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
-              "RelativeToolTip": "EzFileEncrypt\\MIT_license.vb",
-              "ViewState": "AQIAAAEAAAAAAAAAAAA2wAIAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-05T02:53:33.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EzFileEncrypt",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\EzFileEncrypt.vbproj",
               "RelativeDocumentMoniker": "EzFileEncrypt\\EzFileEncrypt.vbproj",
@@ -100,6 +87,19 @@
               "RelativeToolTip": "EzFileEncrypt\\EzFileEncrypt.vbproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
               "WhenOpened": "2024-07-05T03:10:31.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MIT_license.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
+              "RelativeToolTip": "EzFileEncrypt\\MIT_license.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-05T02:53:33.728Z",
               "EditorCaption": ""
             },
             {

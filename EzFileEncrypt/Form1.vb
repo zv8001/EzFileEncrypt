@@ -5,8 +5,11 @@ Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
 Public Class Form1
+    Dim VersionIdentifier = "v 2.1.1"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MIT_license.ShowDialog()
+        Label10.Text = VersionIdentifier
+        Label12.Text = VersionIdentifier
         Try
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
         Catch ex As Exception
@@ -96,7 +99,7 @@ Public Class Form1
 
 
         If TextBox3.Text = "" Then
-            MsgBox("A encryption key key is needed")
+            MsgBox("A encryption key key is needed", 0 + 16, "EZ File Encrypt")
         Else
 
 
@@ -122,7 +125,7 @@ Public Class Form1
                 My.Computer.FileSystem.DeleteDirectory(Inputfile_txt.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
                 Me.Invoke(Sub() outputlog_list.Items.Add("main folder removed"))
                 Me.Invoke(Sub() outputlog_list.Items.Add("Done!"))
-                MsgBox("Done!", 0 + 64)
+                MsgBox("Done!", 0 + 64, "EzFileEncrypt")
             Catch ex As Exception
                 MsgBox(ex.Message, 0 + 16, "EzFileEncrypt")
             End Try
@@ -161,7 +164,7 @@ Public Class Form1
             Dim LegacyEncryptionKey = TextBox4.Text
 
             If TextBox4.Text = "" Then
-                MsgBox("A decryption key is needed", 0 + 16)
+                MsgBox("A decryption key is needed", 0 + 16, "EzFileEncrypt")
                 Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: A decryption key is needed"))
             Else
                 Try
@@ -174,7 +177,7 @@ Public Class Form1
                     End If
 
                 Catch ex As Exception
-                    MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", 0 + 16)
+                    MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", 0 + 16, "EzFileEncrypt")
 
                     Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
                     Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
@@ -195,7 +198,7 @@ Public Class Form1
                 Me.Invoke(Sub() outputlog_list.Items.Add("deleting decrypt0.tmp"))
                 My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
                 Me.Invoke(Sub() outputlog_list.Items.Add("Done!"))
-                MsgBox("successfully decrypted files")
+                MsgBox("successfully decrypted files", 0 + 64, "EzFileEncrypt")
             End If
 
 
@@ -271,10 +274,10 @@ Public Class Form1
                     writer.WriteLine(item.ToString())
                 Next
             End Using
-            MsgBox(Path.GetTempPath() & randomStr & ".LOG")
+
             Process.Start("C:\Windows\System32\notepad.exe", Path.GetTempPath() & randomStr & ".LOG")
         Catch ex As Exception
-            MsgBox("Log File Save Fail", 0 + 16)
+            MsgBox("Log File Save Fail", 0 + 16, "EzFileEncrypt")
         End Try
 
     End Sub
@@ -318,6 +321,18 @@ Public Class Form1
 
     Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Try
+            Process.Start("C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "https://github.com/zv8001/EzFileEncrypt")
+        Catch ex As Exception
+            MsgBox("Failed to open C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", 0 + 16, "EzFileEncrypt")
+        End Try
     End Sub
 End Class
 
