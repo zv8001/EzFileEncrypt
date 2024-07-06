@@ -1,0 +1,2 @@
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\win-x86\EzFileEncrypt.pdb
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Release\net8.0-windows\publish\win-x86\EzFileEncrypt.exe

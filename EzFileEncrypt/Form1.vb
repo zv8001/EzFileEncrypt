@@ -1,6 +1,9 @@
 ﻿Imports System.IO
 Imports System.Security.Cryptography
 Imports System.IO.Compression
+Imports System.Drawing.Text
+Imports System.Reflection.Metadata.Ecma335
+Imports System.Text
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MIT_license.ShowDialog()
@@ -37,6 +40,7 @@ Public Class Form1
         outputlog_list.Items.Add("Calling EncryptBackgoundWorker.RunWorkerAsync()")
         Try
             EncryptBackgoundWorker.RunWorkerAsync()
+
         Catch ex As Exception
             MsgBox(ex.Message, 0 + 16)
         End Try
@@ -89,16 +93,26 @@ Public Class Form1
     End Sub
 
     Private Sub EncryptBackgoundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles EncryptBackgoundWorker.DoWork
+
+
         If TextBox3.Text = "" Then
             MsgBox("A encryption key key is needed")
         Else
+
+
             Try
+
+                Dim EncryptionKey = CreateEncryptionKey(TextBox3.Text)
+
+
                 Me.Invoke(Sub() outputlog_list.Items.Add("Currently creating: CreateFrom0Directory.tmp"))
 
                 ZipFile.CreateFromDirectory(Inputfile_txt.Text, Application.StartupPath & "\CreateFrom0Directory.tmp")
 
+
+
                 Me.Invoke(Sub() outputlog_list.Items.Add("encrypting: CreateFrom0Directory.tmp"))
-                EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", TextBox3.Text)
+                EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", EncryptionKey)
 
                 Me.Invoke(Sub() outputlog_list.Items.Add("EzFileEncrypt: created"))
 
@@ -115,19 +129,54 @@ Public Class Form1
         End If
     End Sub
 
+
+    Function CreateEncryptionKey(Input)
+        Dim a1 As String = StringToBase64(Input)
+        Dim a2 As String = StringToBase64(a1)
+        Dim a3 As String = StringToBase64(a2)
+        Dim a4 As String = StringToBase64(a3)
+        Dim a5 As String = StringToBase64(a4)
+        Dim a6 As String = StringToBase64(a5)
+        Dim a7 As String = StringToBase64(a6)
+        Dim a8 As String = StringToBase64(a7)
+
+        Dim a9 As String = StringToBase64(a8)
+        Dim a10 As String = StringToBase64(a9)
+        Dim a11 As String = StringToBase64(a10)
+        Dim a12 As String = StringToBase64(a11)
+        Dim a13 As String = StringToBase64(a12)
+        Dim a14 As String = StringToBase64(a13)
+        Dim a15 As String = StringToBase64(a14)
+        Dim a16 As String = StringToBase64(a15)
+        Return a16
+    End Function
+
+
+
     Private Sub DecryptBackgoundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles DecryptBackgoundWorker.DoWork
 
         Try
+
+            Dim EncryptionKey = CreateEncryptionKey(TextBox4.Text)
+            Dim LegacyEncryptionKey = TextBox4.Text
+
             If TextBox4.Text = "" Then
                 MsgBox("A decryption key is needed", 0 + 16)
                 Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: A decryption key is needed"))
             Else
                 Try
                     Me.Invoke(Sub() outputlog_list.Items.Add("Decrypting: decrypt0.tmp"))
-                    EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", TextBox4.Text)
+
+                    If DecryptusinglegacyCHK.Checked Then
+                        EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
+                    Else
+                        EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", EncryptionKey)
+                    End If
+
                 Catch ex As Exception
                     MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", 0 + 16)
 
+                    Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
                     Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
                 End Try
 
@@ -229,7 +278,49 @@ Public Class Form1
         End Try
 
     End Sub
+
+    Private Sub CheckIfEncryptIsBusy_Tick(sender As Object, e As EventArgs) Handles CheckIfEncryptIsBusy.Tick
+        If EncryptBackgoundWorker.IsBusy Then
+            Encryptbtn.Enabled = False
+        Else
+            Encryptbtn.Enabled = True
+        End If
+
+        If DecryptBackgoundWorker.IsBusy Then
+            Button4.Enabled = False
+        Else
+            Button4.Enabled = True
+        End If
+
+
+    End Sub
+
+    Public Function StringToBase64(ByVal input As String) As String
+        ' Convert the string to a byte array
+        Dim bytes As Byte() = Encoding.ASCII.GetBytes(input)
+
+        ' Convert the byte array to a Base64 string
+        Dim base64 As String = Convert.ToBase64String(bytes)
+
+        Return base64
+    End Function
+
+
+    Public Function Base64ToString(ByVal base64 As String) As String
+        ' Convert the Base64 string to a byte array
+        Dim bytes As Byte() = Convert.FromBase64String(base64)
+
+        ' Convert the byte array to a string
+        Dim str As String = Encoding.ASCII.GetString(bytes)
+
+        Return str
+    End Function
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
 End Class
+
 
 
 

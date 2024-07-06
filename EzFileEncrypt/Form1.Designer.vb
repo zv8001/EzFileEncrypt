@@ -55,6 +55,9 @@ Partial Class Form1
         DecryptBackgoundWorker = New ComponentModel.BackgroundWorker()
         MoveListBox = New Timer(components)
         SaveLogBtn = New Button()
+        CheckIfEncryptIsBusy = New Timer(components)
+        DecryptusinglegacyCHK = New CheckBox()
+        Label10 = New Label()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -153,6 +156,7 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(DecryptusinglegacyCHK)
         TabPage2.Controls.Add(Label9)
         TabPage2.Controls.Add(TextBox4)
         TabPage2.Controls.Add(Button4)
@@ -171,11 +175,12 @@ Partial Class Form1
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(6, 123)
+        Label9.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label9.Location = New Point(6, 138)
         Label9.Name = "Label9"
-        Label9.Size = New Size(334, 45)
+        Label9.Size = New Size(314, 39)
         Label9.TabIndex = 20
-        Label9.Text = "Using ultra secure AES encryption technology so not even the " & vbCrLf & "government can see your files guided you have a strong " & vbCrLf & "enough password." & vbCrLf
+        Label9.Text = "If you encrypted your files in EZ File Encrypt v2.0.0 or earlier " & vbCrLf & "select this checkbox. because the internal decryption key " & vbCrLf & "will be different."
         ' 
         ' TextBox4
         ' 
@@ -288,6 +293,7 @@ Partial Class Form1
         ' 
         ' EncryptBackgoundWorker
         ' 
+        EncryptBackgoundWorker.WorkerSupportsCancellation = True
         ' 
         ' outputlog_list
         ' 
@@ -300,6 +306,7 @@ Partial Class Form1
         ' 
         ' DecryptBackgoundWorker
         ' 
+        DecryptBackgoundWorker.WorkerSupportsCancellation = True
         ' 
         ' MoveListBox
         ' 
@@ -315,11 +322,37 @@ Partial Class Form1
         SaveLogBtn.Text = "Save Log"
         SaveLogBtn.UseVisualStyleBackColor = True
         ' 
+        ' CheckIfEncryptIsBusy
+        ' 
+        CheckIfEncryptIsBusy.Enabled = True
+        CheckIfEncryptIsBusy.Interval = 1
+        ' 
+        ' DecryptusinglegacyCHK
+        ' 
+        DecryptusinglegacyCHK.AutoSize = True
+        DecryptusinglegacyCHK.Location = New Point(6, 116)
+        DecryptusinglegacyCHK.Name = "DecryptusinglegacyCHK"
+        DecryptusinglegacyCHK.Size = New Size(254, 19)
+        DecryptusinglegacyCHK.TabIndex = 22
+        DecryptusinglegacyCHK.Text = "Decrypt using legacy .EZFileEncrypt Format"
+        DecryptusinglegacyCHK.UseVisualStyleBackColor = True
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.Location = New Point(16, 49)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(39, 13)
+        Label10.TabIndex = 23
+        Label10.Text = "v 2.1.0"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(375, 486)
+        Controls.Add(Label10)
         Controls.Add(SaveLogBtn)
         Controls.Add(outputlog_list)
         Controls.Add(PictureBox2)
@@ -378,5 +411,8 @@ Partial Class Form1
     Friend WithEvents DecryptBackgoundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents MoveListBox As Timer
     Friend WithEvents SaveLogBtn As Button
+    Friend WithEvents CheckIfEncryptIsBusy As Timer
+    Friend WithEvents DecryptusinglegacyCHK As CheckBox
+    Friend WithEvents Label10 As Label
 
 End Class
