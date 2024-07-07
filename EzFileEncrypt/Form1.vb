@@ -19,6 +19,11 @@ Public Class Form1
                     Dim result As DialogResult = MessageBox.Show("An update is available would you like to update the program?", "Confirmation", MessageBoxButtons.YesNo)
 
                     Try
+                        My.Computer.FileSystem.DeleteFile("EzFileEncrypt_Update.tmp")
+                    Catch ex As Exception
+
+                    End Try
+                    Try
                         My.Computer.FileSystem.DeleteFile("updater.bat")
                     Catch ex As Exception
 
@@ -27,7 +32,8 @@ Public Class Form1
                     If result = DialogResult.Yes Then
 
                         DisableOutput = True
-                        Dim batchCommands As String = "Echo off" & Environment.NewLine & "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" & Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine &
+                        Dim batchCommands As String = "Echo off" & Environment.NewLine & "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" &
+                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM EzFileEncrypt.exe" & Environment.NewLine & "del /F /Q EzFileEncrypt.exe" & Environment.NewLine &
                                           "ren ""EzFileEncrypt_Update.tmp"" ""EzFileEncrypt.exe""" & Environment.NewLine & "START EzFileEncrypt.exe"
 
                         Using writer As StreamWriter = New StreamWriter("updater.bat")
