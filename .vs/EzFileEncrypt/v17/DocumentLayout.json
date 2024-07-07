@@ -42,8 +42,12 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -76,7 +80,7 @@
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
               "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA7AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T21:20:30.013Z",
               "EditorCaption": ""
@@ -127,10 +131,6 @@
               "RelativeToolTip": "EzFileEncrypt\\EzFileEncrypt.vbproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
               "WhenOpened": "2024-07-05T03:10:31.023Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
