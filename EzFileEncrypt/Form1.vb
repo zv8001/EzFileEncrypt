@@ -5,7 +5,7 @@ Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
 Public Class Form1
-    Dim VersionIdentifier = "v 2.3.1"
+    Dim VersionIdentifier = "v 2.3.3"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -32,9 +32,14 @@ Public Class Form1
                     If result = DialogResult.Yes Then
 
                         DisableOutput = True
-                        Dim batchCommands As String = "Echo off" & Environment.NewLine & "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" &
-                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM EzFileEncrypt.exe" & Environment.NewLine & "del /F /Q EzFileEncrypt.exe" & Environment.NewLine &
-                                          "ren ""EzFileEncrypt_Update.tmp"" ""EzFileEncrypt.exe""" & Environment.NewLine & "START EzFileEncrypt.exe"
+
+                        Dim batchCommands As String = "ECHO OFF" & Environment.NewLine & "CLS" & Environment.NewLine &
+                            "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" &
+                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM " &
+                            Path.GetFileName(Application.ExecutablePath) & " /T /F" &
+                            Environment.NewLine & "del /F /Q " & Path.GetFileName(Application.ExecutablePath) & Environment.NewLine &
+                                          "ren ""EzFileEncrypt_Update.tmp"" """ & Path.GetFileName(Application.ExecutablePath) & """" &
+                                          Environment.NewLine & "START " & Path.GetFileName(Application.ExecutablePath)
 
                         Using writer As StreamWriter = New StreamWriter("updater.bat")
                             writer.Write(batchCommands)
