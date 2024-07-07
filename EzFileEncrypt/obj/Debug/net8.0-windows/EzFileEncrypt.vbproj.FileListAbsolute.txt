@@ -35,3 +35,4 @@ C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Debug\n
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.pdb
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.genruntimeconfig.cache
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\ref\EzFileEncrypt.dll
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Debug\net8.0-windows\EzFileEncrypt.View_final_key.resources

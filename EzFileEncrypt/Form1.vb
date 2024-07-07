@@ -5,8 +5,9 @@ Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
 Public Class Form1
-    Dim VersionIdentifier = "v 2.1.1"
+    Dim VersionIdentifier = "v 2.2.0"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PrintLog("Status: ready", False)
         MIT_license.ShowDialog()
         Label10.Text = VersionIdentifier
         Label12.Text = VersionIdentifier
@@ -22,7 +23,17 @@ Public Class Form1
         End Try
     End Sub
 
+    Sub PrintLog(Log As String, E1rror As Boolean)
+        Me.Invoke(Sub() outputlog_list.Items.Add(Log))
+        Me.Invoke(Sub() Status_lbr.Text = Log)
 
+        If E1rror Then
+            Status_lbr.ForeColor = Color.Red
+        Else
+            Status_lbr.ForeColor = Color.ForestGreen
+        End If
+
+    End Sub
     Private Sub SelInputFileBtn_Click(sender As Object, e As EventArgs) Handles SelInputFileBtn.Click
 
 
@@ -68,7 +79,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        outputlog_list.Items.Add("Calling DecryptBackgoundWorker.RunWorkerAsync()")
+        PrintLog("Status: Calling DecryptBackgoundWorker.RunWorkerAsync()", False)
+
         Try
             DecryptBackgoundWorker.RunWorkerAsync()
         Catch ex As Exception
@@ -99,7 +111,9 @@ Public Class Form1
 
 
         If TextBox3.Text = "" Then
+            PrintLog("ERROR: A encryption key key is needed", True)
             MsgBox("A encryption key key is needed", 0 + 16, "EZ File Encrypt")
+
         Else
 
 
@@ -107,33 +121,59 @@ Public Class Form1
 
                 Dim EncryptionKey = CreateEncryptionKey(TextBox3.Text)
 
+                View_final_key.RichTextBox1.Text = EncryptionKey
+                View_final_key.ShowDialog()
 
-                Me.Invoke(Sub() outputlog_list.Items.Add("Currently creating: CreateFrom0Directory.tmp"))
-
-                ZipFile.CreateFromDirectory(Inputfile_txt.Text, Application.StartupPath & "\CreateFrom0Directory.tmp")
+                PrintLog("OK: Currently creating: CreateFrom0Directory.tmp", False)
 
 
 
-                Me.Invoke(Sub() outputlog_list.Items.Add("encrypting: CreateFrom0Directory.tmp"))
+                Using archive As ZipArchive = ZipFile.Open(Application.StartupPath & "\CreateFrom0Directory.tmp", ZipArchiveMode.Create)
+                    ' Get the files in the source directory
+                    Dim files As String() = Directory.GetFiles(Inputfile_txt.Text)
+
+                    ' Loop through each file
+                    For Each file As String In files
+                        '  outputlog_list.Items.Add("Processing: " & file)
+
+                        PrintLog("OK: Processing: " & file, False)
+
+                        archive.CreateEntryFromFile(file, Path.GetFileName(file))
+
+
+                    Next
+                End Using
+
+                PrintLog("OK: encrypting: CreateFrom0Directory.tmp", False)
+
                 EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", EncryptionKey)
 
-                Me.Invoke(Sub() outputlog_list.Items.Add("EzFileEncrypt: created"))
+                PrintLog("OK: EzFileEncrypt: created", False)
 
-                Me.Invoke(Sub() outputlog_list.Items.Add("beginning clean up operations"))
+                PrintLog("OK: beginning clean up operations", False)
+
                 My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
-                Me.Invoke(Sub() outputlog_list.Items.Add("CreateFrom0Directory.tmp removed"))
+                PrintLog("OK: CreateFrom0Directory.tmp removed", False)
+
                 My.Computer.FileSystem.DeleteDirectory(Inputfile_txt.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
-                Me.Invoke(Sub() outputlog_list.Items.Add("main folder removed"))
-                Me.Invoke(Sub() outputlog_list.Items.Add("Done!"))
+
+
+                PrintLog("OK: main folder removed", False)
+                PrintLog("OK: Done!", False)
+
                 MsgBox("Done!", 0 + 64, "EzFileEncrypt")
             Catch ex As Exception
+                PrintLog("ERROR: " & ex.Message, True)
                 MsgBox(ex.Message, 0 + 16, "EzFileEncrypt")
             End Try
         End If
     End Sub
 
 
-    Function CreateEncryptionKey(Input)
+    Function CreateEncryptionKey(Input) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
+        'and you will only be able to decrypt a legacy encryption files & new .EzFileEncrypt files you created with the new function
+
+
         Dim a1 As String = StringToBase64(Input)
         Dim a2 As String = StringToBase64(a1)
         Dim a3 As String = StringToBase64(a2)
@@ -165,10 +205,13 @@ Public Class Form1
 
             If TextBox4.Text = "" Then
                 MsgBox("A decryption key is needed", 0 + 16, "EzFileEncrypt")
-                Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: A decryption key is needed"))
+
+                PrintLog("ERROR: A decryption key is needed", True)
+
             Else
                 Try
-                    Me.Invoke(Sub() outputlog_list.Items.Add("Decrypting: decrypt0.tmp"))
+                    PrintLog("OK: Decrypting: decrypt0.tmp", False)
+
 
                     If DecryptusinglegacyCHK.Checked Then
                         EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
@@ -179,33 +222,41 @@ Public Class Form1
                 Catch ex As Exception
                     MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", 0 + 16, "EzFileEncrypt")
 
-                    Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
-                    Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: EncryptDecryptFile.DecryptFile() function failure please check your decryption key."))
+                    PrintLog("ERROR: Decrypting: EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", True)
+
                 End Try
 
-                Me.Invoke(Sub() outputlog_list.Items.Add("Creating directory: " & Path.GetFileNameWithoutExtension(TextBox6.Text)))
+                PrintLog("OK: Creating directory: " & Path.GetFileNameWithoutExtension(TextBox6.Text), False)
+
                 My.Computer.FileSystem.CreateDirectory(Path.GetFileNameWithoutExtension(TextBox6.Text))
                 Try
-                    Me.Invoke(Sub() outputlog_list.Items.Add("Extracting files from unencrypted archive..."))
+                    PrintLog("OK: Extracting files from unencrypted archive... ", False)
+
+
                     ZipFile.ExtractToDirectory("decrypt0.tmp", Path.GetDirectoryName(TextBox6.Text) & "\" & Path.GetFileNameWithoutExtension(TextBox6.Text))
-                    Me.Invoke(Sub() outputlog_list.Items.Add("archive extraction successful"))
+
+                    PrintLog("OK: archive extraction successful", False)
+
+
                 Catch ex As Exception
                     MsgBox("decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly.", 0 + 16)
                     My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
-                    Me.Invoke(Sub() outputlog_list.Items.Add("FAILURE: decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly."))
 
+                    PrintLog("ERROR: decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly.", True)
                 End Try
-                Me.Invoke(Sub() outputlog_list.Items.Add("deleting decrypt0.tmp"))
+                PrintLog("OK: deleting decrypt0.tmp", False)
+
                 My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
-                Me.Invoke(Sub() outputlog_list.Items.Add("Done!"))
+                PrintLog("OK: Done!", False)
+
                 MsgBox("successfully decrypted files", 0 + 64, "EzFileEncrypt")
             End If
 
 
         Catch ex As Exception
             MsgBox(ex.Message, 0 + 16, "EzFileEncrypt")
+            PrintLog("OK: ERROR: " & ex.Message, True)
 
-            Me.Invoke(Sub() outputlog_list.Items.Add("ERROR: " & ex.Message))
         End Try
 
     End Sub
@@ -222,6 +273,8 @@ Public Class Form1
 
         End Try
     End Sub
+
+
 
     Private Sub SaveLogBtn_Click(sender As Object, e As EventArgs) Handles SaveLogBtn.Click
         Dim saveFileDialog1 As New SaveFileDialog()
@@ -251,22 +304,24 @@ Public Class Form1
         Return final
     End Function
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        outputlog_list.Items.Add("*** DO NOT CLOSE*** beginning clean up procedure do not kill this process because it may lead to unencrypted data exposed on your hard disk.")
 
+        PrintLog("OK: *** DO NOT CLOSE*** beginning clean up procedure do not kill this process because it may lead to unencrypted data exposed on your hard disk.", False)
         Try
-            outputlog_list.Items.Add("Deleting: CreateFrom0Directory.tmp")
+            PrintLog("OK: Deleting: CreateFrom0Directory.tmp", False)
+
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
         Catch ex As Exception
 
         End Try
         Try
-            outputlog_list.Items.Add("Deleting: decrypt0.tmp")
+            PrintLog("OK: Deleting: decrypt0.tmp", False)
+
             My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
         Catch ex As Exception
 
         End Try
+        PrintLog("OK: all unencrypted temporary files have been removed program is now exiting.", False)
 
-        outputlog_list.Items.Add("all unencrypted temporary files have been removed program is now exiting.")
         Try
             Dim randomStr As String = GenerateRandomString(15)
             Using writer As New StreamWriter(Path.GetTempPath() & randomStr & ".LOG")
@@ -277,6 +332,7 @@ Public Class Form1
 
             Process.Start("C:\Windows\System32\notepad.exe", Path.GetTempPath() & randomStr & ".LOG")
         Catch ex As Exception
+            PrintLog("ERRPR: Log File Save Fail", True)
             MsgBox("Log File Save Fail", 0 + 16, "EzFileEncrypt")
         End Try
 
@@ -299,23 +355,15 @@ Public Class Form1
     End Sub
 
     Public Function StringToBase64(ByVal input As String) As String
-        ' Convert the string to a byte array
         Dim bytes As Byte() = Encoding.ASCII.GetBytes(input)
-
-        ' Convert the byte array to a Base64 string
         Dim base64 As String = Convert.ToBase64String(bytes)
-
         Return base64
     End Function
 
 
     Public Function Base64ToString(ByVal base64 As String) As String
-        ' Convert the Base64 string to a byte array
         Dim bytes As Byte() = Convert.FromBase64String(base64)
-
-        ' Convert the byte array to a string
         Dim str As String = Encoding.ASCII.GetString(bytes)
-
         Return str
     End Function
 
@@ -333,6 +381,16 @@ Public Class Form1
         Catch ex As Exception
             MsgBox("Failed to open C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", 0 + 16, "EzFileEncrypt")
         End Try
+    End Sub
+
+    Private Sub Status_lbr_Click(sender As Object, e As EventArgs) Handles Status_lbr.Click
+
+    End Sub
+
+    Private Sub DecryptusinglegacyCHK_CheckedChanged(sender As Object, e As EventArgs) Handles DecryptusinglegacyCHK.CheckedChanged
+        If DecryptusinglegacyCHK.Checked Then
+            MsgBox("This option is only to decrypt files that have been encrypted with the older EzFileEncrypt v 2.0.0 and older. If you have files encrypted in the older versions it is recommended you re-encrypt them with the new versions.", 0 + 48, "EzFileEncrypt")
+        End If
     End Sub
 End Class
 

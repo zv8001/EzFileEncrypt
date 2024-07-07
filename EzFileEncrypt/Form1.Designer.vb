@@ -65,6 +65,7 @@ Partial Class Form1
         SaveLogBtn = New Button()
         CheckIfEncryptIsBusy = New Timer(components)
         Label10 = New Label()
+        Status_lbr = New Label()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -350,7 +351,7 @@ Partial Class Form1
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(16, 442)
+        PictureBox1.Location = New Point(16, 460)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(36, 36)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -360,7 +361,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(63, 443)
+        Label4.Location = New Point(63, 461)
         Label4.Name = "Label4"
         Label4.Size = New Size(85, 15)
         Label4.TabIndex = 3
@@ -369,7 +370,7 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(63, 459)
+        Label5.Location = New Point(63, 477)
         Label5.Name = "Label5"
         Label5.Size = New Size(166, 15)
         Label5.TabIndex = 4
@@ -409,7 +410,7 @@ Partial Class Form1
         ' 
         ' SaveLogBtn
         ' 
-        SaveLogBtn.Location = New Point(271, 441)
+        SaveLogBtn.Location = New Point(271, 459)
         SaveLogBtn.Name = "SaveLogBtn"
         SaveLogBtn.Size = New Size(88, 33)
         SaveLogBtn.TabIndex = 7
@@ -431,11 +432,22 @@ Partial Class Form1
         Label10.TabIndex = 23
         Label10.Text = "v 2.1.0"
         ' 
+        ' Status_lbr
+        ' 
+        Status_lbr.AutoSize = True
+        Status_lbr.ForeColor = Color.ForestGreen
+        Status_lbr.Location = New Point(16, 439)
+        Status_lbr.Name = "Status_lbr"
+        Status_lbr.Size = New Size(151, 15)
+        Status_lbr.TabIndex = 24
+        Status_lbr.Text = "Status: EZ File Encrypt Redy"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(375, 486)
+        ClientSize = New Size(375, 504)
+        Controls.Add(Status_lbr)
         Controls.Add(Label10)
         Controls.Add(SaveLogBtn)
         Controls.Add(outputlog_list)
@@ -447,9 +459,9 @@ Partial Class Form1
         Controls.Add(TabControl1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
-        MaximumSize = New Size(391, 525)
+        MaximumSize = New Size(391, 543)
         MinimizeBox = False
-        MinimumSize = New Size(391, 525)
+        MinimumSize = New Size(391, 543)
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Ez File Encrypt | https://github.com/zv8001/EzFileEncrypt"
@@ -507,5 +519,6 @@ Partial Class Form1
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label13 As Label
     Friend WithEvents RichTextBox2 As RichTextBox
+    Friend WithEvents Status_lbr As Label
 
 End Class

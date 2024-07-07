@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("EzFileEncrypt"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5024f6b6ab018ae4ea9302d79044250a88743b1"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b976221295b7359c676bb37cdadc992edcb15f86"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("EzFileEncrypt"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("EzFileEncrypt"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
