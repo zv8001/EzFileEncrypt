@@ -1,0 +1,5 @@
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\publish\EzFileEncrypt.exe
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\publish\EzFileEncrypt.dll
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\publish\EzFileEncrypt.deps.json
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\publish\EzFileEncrypt.runtimeconfig.json
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\bin\Debug\net8.0-windows\publish\EzFileEncrypt.pdb

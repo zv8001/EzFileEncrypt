@@ -6,23 +6,88 @@ Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
 Public Class Form1
     Dim VersionIdentifier = "v 2.2.0"
+    Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Try 'Update Code
+            My.Computer.Network.DownloadFile("https://lucky-paprenjak-2c728d.netlify.app/EzFileEncrypt/EzFileEncrypt/bin/Release/net8.0-windows/publish/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
+
+            Try
+
+                If Not GetMD5HashFromFile(Application.ExecutablePath) = GetMD5HashFromFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp") Then
+
+                    Dim result As DialogResult = MessageBox.Show("An update is available would you like to update the program?", "Confirmation", MessageBoxButtons.YesNo)
+
+                    Try
+                        My.Computer.FileSystem.DeleteFile("updater.bat")
+                    Catch ex As Exception
+
+                    End Try
+
+                    If result = DialogResult.Yes Then
+
+                        DisableOutput = True
+                        Dim batchCommands As String = "Echo off" & Environment.NewLine & "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" & Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine &
+                                          "ren ""EzFileEncrypt_Update.tmp"" ""EzFileEncrypt.exe""" & Environment.NewLine & "START EzFileEncrypt.exe"
+
+                        Using writer As StreamWriter = New StreamWriter("updater.bat")
+                            writer.Write(batchCommands)
+                        End Using
+
+                        My.Computer.FileSystem.CopyFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp", Application.StartupPath & "\EzFileEncrypt_Update.tmp")
+                        Process.Start("cmd.exe", "/C choice /C Y /N /D Y /T 3 & Del " & Application.ExecutablePath)
+                        Process.Start("updater.bat")
+                        Application.[Exit]()
+
+                    End If
+
+                End If
+
+            Catch ex As Exception
+                MsgBox("An unknown error occurred while trying to update the program", 0 + 16, "ERROR")
+            End Try
+        Catch ex As Exception
+            MsgBox("Failed to connect to the update server.", 0 + 16, "EzFileEncrypt")
+        End Try
+
+
+
         PrintLog("Status: ready", False)
         MIT_license.ShowDialog()
         Label10.Text = VersionIdentifier
         Label12.Text = VersionIdentifier
+
         Try
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
         Catch ex As Exception
-
         End Try
         Try
             My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
         Catch ex As Exception
+        End Try
+
+        Try
+            My.Computer.FileSystem.DeleteFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
+        Catch ex As Exception
 
         End Try
-    End Sub
 
+
+
+    End Sub
+    Function GetMD5HashFromFile(fileName As String) As String
+        Dim md5 As MD5 = MD5.Create()
+        Dim stream As FileStream = File.OpenRead(fileName)
+        Dim hash As Byte() = md5.ComputeHash(stream)
+        stream.Close()
+
+        Dim sb As New StringBuilder()
+        For i As Integer = 0 To hash.Length - 1
+            sb.Append(hash(i).ToString("X2"))
+        Next
+
+        Return sb.ToString()
+    End Function
     Sub PrintLog(Log As String, E1rror As Boolean)
         Me.Invoke(Sub() outputlog_list.Items.Add(Log))
         Me.Invoke(Sub() Status_lbr.Text = Log)
@@ -329,8 +394,10 @@ Public Class Form1
                     writer.WriteLine(item.ToString())
                 Next
             End Using
+            If DisableOutput = False Then
+                Process.Start("C:\Windows\System32\notepad.exe", Path.GetTempPath() & randomStr & ".LOG")
+            End If
 
-            Process.Start("C:\Windows\System32\notepad.exe", Path.GetTempPath() & randomStr & ".LOG")
         Catch ex As Exception
             PrintLog("ERRPR: Log File Save Fail", True)
             MsgBox("Log File Save Fail", 0 + 16, "EzFileEncrypt")
