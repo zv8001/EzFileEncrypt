@@ -5,12 +5,12 @@ Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
 Public Class Form1
-    Dim VersionIdentifier = "v 2.2.0"
+    Dim VersionIdentifier = "v 2.3.1"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try 'Update Code
-            My.Computer.Network.DownloadFile("https://lucky-paprenjak-2c728d.netlify.app/EzFileEncrypt/EzFileEncrypt/bin/Release/net8.0-windows/publish/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
+            My.Computer.Network.DownloadFile("https://lucky-paprenjak-2c728d.netlify.app/EzFileEncrypt/bin/Release/net8.0-windows/publish/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
 
             Try
 
