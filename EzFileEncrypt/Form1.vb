@@ -56,11 +56,11 @@ Public Class Form1
 
                         Dim batchCommands As String = "ECHO OFF" & Environment.NewLine & "CLS" & Environment.NewLine &
                             "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" &
-                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM " &
-                            Path.GetFileName(Application.ExecutablePath) & " /T /F" &
-                            Environment.NewLine & "del /F /Q " & Path.GetFileName(Application.ExecutablePath) & Environment.NewLine &
+                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM """ &
+                            Path.GetFileName(Application.ExecutablePath) & """ /T /F" &
+                            Environment.NewLine & "del /F /Q """ & Path.GetFileName(Application.ExecutablePath) & """" & Environment.NewLine &
                                           "ren ""EzFileEncrypt_Update.tmp"" """ & Path.GetFileName(Application.ExecutablePath) & """" &
-                                          Environment.NewLine & "START " & Path.GetFileName(Application.ExecutablePath)
+                                          Environment.NewLine & "powershell -Command & """ & Application.ExecutablePath & """"
 
                         Using writer As StreamWriter = New StreamWriter("updater.bat")
                             writer.Write(batchCommands)
@@ -79,7 +79,7 @@ Public Class Form1
                 MsgBox("An unknown error occurred while trying to update the program", 0 + 16, "ERROR")
             End Try
         Catch ex As Exception
-            MsgBox("Failed to connect to the update server.", 0 + 16, "EzFileEncrypt")
+            MsgBox("Failed to connect to the update server. " & ex.Message, 0 + 16, "EzFileEncrypt")
         End Try
 
 

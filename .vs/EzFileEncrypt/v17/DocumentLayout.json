@@ -53,20 +53,32 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WindowsFormsApplicationBase.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
-              "ToolTip": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb [Read Only]",
-              "ViewState": "AQIAAJkCAAAAAAAAAAAWwDkDAABiAAAA",
+              "DocumentIndex": 1,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb [Design]",
+              "RelativeToolTip": "EzFileEncrypt\\Form1.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-08T06:54:44.656Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2024-07-08T03:31:26.507Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
+              "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
+              "ViewState": "AQIAACYAAAAAAAAAAAAawD4AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-04T21:20:30.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -94,28 +106,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb [Design]",
-              "RelativeToolTip": "EzFileEncrypt\\Form1.vb [Design]",
+              "DocumentIndex": 3,
+              "Title": "WindowsFormsApplicationBase.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
+              "ToolTip": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb [Read Only]",
+              "ViewState": "AQIAAJkCAAAAAAAAAAAWwDkDAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-08T03:31:26.507Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
-              "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAtwBsAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-04T21:20:30.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T06:54:44.656Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
