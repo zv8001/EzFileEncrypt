@@ -132,12 +132,12 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("VHS Mono Caps", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(6, 66)
+        Label3.Font = New Font("MS Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(6, 69)
         Label3.Name = "Label3"
-        Label3.Size = New Size(126, 16)
+        Label3.Size = New Size(159, 13)
         Label3.TabIndex = 5
-        Label3.Text = "select input file"
+        Label3.Text = "select input folder"
         ' 
         ' Inputfile_txt
         ' 
@@ -158,10 +158,10 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("VHS Mono Caps", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("MS Gothic", 24F, FontStyle.Bold)
         Label2.Location = New Point(6, 15)
         Label2.Name = "Label2"
-        Label2.Size = New Size(119, 32)
+        Label2.Size = New Size(134, 33)
         Label2.TabIndex = 2
         Label2.Text = "Encrypt"
         ' 
@@ -224,10 +224,10 @@ Partial Class Form1
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("VHS Mono Caps", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(6, 68)
+        Label6.Font = New Font("MS Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(6, 71)
         Label6.Name = "Label6"
-        Label6.Size = New Size(182, 16)
+        Label6.Size = New Size(207, 13)
         Label6.TabIndex = 14
         Label6.Text = "select EzFileEncrypt file"
         ' 
@@ -250,10 +250,10 @@ Partial Class Form1
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Font = New Font("VHS Mono Caps", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label7.Font = New Font("MS Gothic", 24F, FontStyle.Bold)
         Label7.Location = New Point(6, 17)
         Label7.Name = "Label7"
-        Label7.Size = New Size(119, 32)
+        Label7.Size = New Size(134, 33)
         Label7.TabIndex = 11
         Label7.Text = "DECRYPT"
         ' 
@@ -277,6 +277,7 @@ Partial Class Form1
         ' 
         RichTextBox2.Location = New Point(3, 157)
         RichTextBox2.Name = "RichTextBox2"
+        RichTextBox2.ReadOnly = True
         RichTextBox2.Size = New Size(337, 58)
         RichTextBox2.TabIndex = 28
         RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
@@ -306,6 +307,7 @@ Partial Class Form1
         RichTextBox1.BorderStyle = BorderStyle.None
         RichTextBox1.Location = New Point(3, 58)
         RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.ReadOnly = True
         RichTextBox1.Size = New Size(337, 95)
         RichTextBox1.TabIndex = 25
         RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
@@ -392,11 +394,12 @@ Partial Class Form1
         ' 
         ' outputlog_list
         ' 
+        outputlog_list.Font = New Font("Segoe UI", 7.25F)
         outputlog_list.FormattingEnabled = True
-        outputlog_list.ItemHeight = 15
+        outputlog_list.ItemHeight = 12
         outputlog_list.Location = New Point(16, 341)
         outputlog_list.Name = "outputlog_list"
-        outputlog_list.Size = New Size(343, 94)
+        outputlog_list.Size = New Size(343, 88)
         outputlog_list.TabIndex = 6
         ' 
         ' DecryptBackgoundWorker

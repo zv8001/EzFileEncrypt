@@ -4,12 +4,28 @@ Imports System.IO.Compression
 Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
+
+'Copyright 2024 ZV800
+
+'Permission Is hereby granted, free Of charge, to any person obtaining a copy of this software And associated documentation files
+'(the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish,
+'distribute, sublicense, And/Or sell copies of the Software, And to permit persons to whom the Software Is furnished to do so, subject to the
+'following conditions:
+
+'The above copyright notice And this permission notice shall be included In all copies Or substantial portions Of the Software.
+
+'THE SOFTWARE Is PROVIDED “AS IS”, WITHOUT WARRANTY Of ANY KIND, EXPRESS Or IMPLIED, INCLUDING BUT Not LIMITED To THE WARRANTIES Of
+'MERCHANTABILITY, FITNESS For A PARTICULAR PURPOSE And NONINFRINGEMENT. In NO Event SHALL THE AUTHORS Or COPYRIGHT HOLDERS BE LIABLE For ANY
+'CLAIM, DAMAGES Or OTHER LIABILITY, WHETHER In AN ACTION Of CONTRACT, TORT Or OTHERWISE, ARISING FROM, OUT Of Or In CONNECTION With THE
+'SOFTWARE Or THE USE Or OTHER DEALINGS In THE SOFTWARE.
+
+
 Public Class Form1
-    Dim VersionIdentifier = "v 2.3.3"
+    Dim VersionIdentifier = "v 2.4.0"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Try 'Update Code
+        Try 'Update Code idk
             My.Computer.Network.DownloadFile("https://lucky-paprenjak-2c728d.netlify.app/EzFileEncrypt/bin/Release/net8.0-windows/publish/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
 
             Try
@@ -205,10 +221,10 @@ Public Class Form1
 
 
                 Using archive As ZipArchive = ZipFile.Open(Application.StartupPath & "\CreateFrom0Directory.tmp", ZipArchiveMode.Create)
-                    ' Get the files in the source directory
+
                     Dim files As String() = Directory.GetFiles(Inputfile_txt.Text)
 
-                    ' Loop through each file
+
                     For Each file As String In files
                         '  outputlog_list.Items.Add("Processing: " & file)
 
@@ -249,7 +265,6 @@ Public Class Form1
     Function CreateEncryptionKey(Input) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
         'and you will only be able to decrypt a legacy encryption files & new .EzFileEncrypt files you created with the new function
 
-
         Dim a1 As String = StringToBase64(Input)
         Dim a2 As String = StringToBase64(a1)
         Dim a3 As String = StringToBase64(a2)
@@ -258,7 +273,6 @@ Public Class Form1
         Dim a6 As String = StringToBase64(a5)
         Dim a7 As String = StringToBase64(a6)
         Dim a8 As String = StringToBase64(a7)
-
         Dim a9 As String = StringToBase64(a8)
         Dim a10 As String = StringToBase64(a9)
         Dim a11 As String = StringToBase64(a10)
@@ -268,6 +282,7 @@ Public Class Form1
         Dim a15 As String = StringToBase64(a14)
         Dim a16 As String = StringToBase64(a15)
         Return a16
+
     End Function
 
 
@@ -469,6 +484,14 @@ Public Class Form1
         If DecryptusinglegacyCHK.Checked Then
             MsgBox("This option is only to decrypt files that have been encrypted with the older EzFileEncrypt v 2.0.0 and older. If you have files encrypted in the older versions it is recommended you re-encrypt them with the new versions.", 0 + 48, "EzFileEncrypt")
         End If
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
     End Sub
 End Class
 
