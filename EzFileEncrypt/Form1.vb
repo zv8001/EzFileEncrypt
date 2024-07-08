@@ -21,7 +21,7 @@ Imports System.Text
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.0"
+    Dim VersionIdentifier = "v 2.4.1"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -191,13 +191,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
 
     Private Sub EncryptBackgoundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles EncryptBackgoundWorker.DoWork
 
@@ -219,20 +212,18 @@ Public Class Form1
                 PrintLog("OK: Currently creating: CreateFrom0Directory.tmp", False)
 
 
-
+                'this stupid code has been broken for a while without my knowledge so I fixed it in v 2.4.1
+                'added search option all directories to fix this stupid bit of code -zv800
                 Using archive As ZipArchive = ZipFile.Open(Application.StartupPath & "\CreateFrom0Directory.tmp", ZipArchiveMode.Create)
-
-                    Dim files As String() = Directory.GetFiles(Inputfile_txt.Text)
-
-
+                    Dim files As String() = Directory.GetFileSystemEntries(Inputfile_txt.Text, "*", SearchOption.AllDirectories)
                     For Each file As String In files
-                        '  outputlog_list.Items.Add("Processing: " & file)
-
-                        PrintLog("OK: Processing: " & file, False)
-
-                        archive.CreateEntryFromFile(file, Path.GetFileName(file))
-
-
+                        Try
+                            PrintLog("OK: Processing: " & file, False)
+                            Dim entryName As String = file.Replace(Inputfile_txt.Text & "\", "")
+                            archive.CreateEntryFromFile(file, entryName)
+                        Catch ex As Exception
+                            PrintLog("ERROR: unexpected error when processing: " & file, False)
+                        End Try
                     Next
                 End Using
 
@@ -330,7 +321,7 @@ Public Class Form1
 
 
                 Catch ex As Exception
-                    MsgBox("decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly.", 0 + 16)
+                    MsgBox("decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly. | FULL ERROR: " & Environment.NewLine & Environment.NewLine & ex.Message, 0 + 16)
                     My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
 
                     PrintLog("ERROR: decrypt0.tmp seems to be corrupted | most likely cause: wrong decryption key, please ensure that you have entered your decryption key correctly.", True)
