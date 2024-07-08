@@ -23,68 +23,9 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.4"
+    Dim VersionIdentifier = "v 2.4.5"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            My.Computer.FileSystem.DeleteFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
-        Catch ex As Exception
-
-        End Try
-        Try 'Update Code idk
-            My.Computer.Network.DownloadFile("https://github.com/zv8001/EzFileEncrypt/raw/main/EzFileEncrypt/bin/Release/net8.0-windows/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
-
-            Try
-
-                If Not GetMD5HashFromFile(Application.ExecutablePath) = GetMD5HashFromFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp") Then
-
-                    Dim result As DialogResult = MessageBox.Show("An update is available would you like to update the program?", "Confirmation", MessageBoxButtons.YesNo)
-
-                    Try
-                        My.Computer.FileSystem.DeleteFile("EzFileEncrypt_Update.tmp")
-                    Catch ex As Exception
-
-                    End Try
-
-                    Try
-                        My.Computer.FileSystem.DeleteFile("updater.bat")
-                    Catch ex As Exception
-
-                    End Try
-
-                    If result = DialogResult.Yes Then
-
-                        DisableOutput = True
-
-                        Dim batchCommands As String = "ECHO OFF" & Environment.NewLine & "CLS" & Environment.NewLine &
-                            "ECHO DO NOT CLOSE THIS WINDOW EZ FILE ENCRYPT IS UPDATING!!" &
-                            Environment.NewLine & "TIMEOUT 5 >NUL" & Environment.NewLine & "TASKKILL /IM """ &
-                            Path.GetFileName(Application.ExecutablePath) & """ /T /F" &
-                            Environment.NewLine & "del /F /Q """ & Path.GetFileName(Application.ExecutablePath) & """" & Environment.NewLine &
-                                          "ren ""EzFileEncrypt_Update.tmp"" """ & Path.GetFileName(Application.ExecutablePath) & """" &
-                                          Environment.NewLine & "powershell -Command & """ & Application.ExecutablePath & """"
-
-                        Using writer As StreamWriter = New StreamWriter("updater.bat")
-                            writer.Write(batchCommands)
-                        End Using
-
-                        My.Computer.FileSystem.CopyFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp", Application.StartupPath & "\EzFileEncrypt_Update.tmp")
-                        Process.Start("cmd.exe", "/C choice /C Y /N /D Y /T 3 & Del " & Application.ExecutablePath)
-                        Process.Start("updater.bat")
-                        Application.[Exit]()
-
-                    End If
-
-                End If
-
-            Catch ex As Exception
-                MsgBox("An unknown error occurred while trying to update the program", 0 + 16, "ERROR")
-            End Try
-        Catch ex As Exception
-            MsgBox("Failed to connect to the update server. " & ex.Message, 0 + 16, "EzFileEncrypt")
-        End Try
-
-
 
         PrintLog("Status: ready", False)
         MIT_license.ShowDialog()
