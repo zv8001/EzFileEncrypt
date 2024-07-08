@@ -66,6 +66,7 @@ Partial Class Form1
         CheckIfEncryptIsBusy = New Timer(components)
         Label10 = New Label()
         Status_lbr = New Label()
+        Status_ProgressBar = New ProgressBar()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -399,7 +400,7 @@ Partial Class Form1
         outputlog_list.ItemHeight = 12
         outputlog_list.Location = New Point(16, 341)
         outputlog_list.Name = "outputlog_list"
-        outputlog_list.Size = New Size(343, 88)
+        outputlog_list.Size = New Size(343, 76)
         outputlog_list.TabIndex = 6
         ' 
         ' DecryptBackgoundWorker
@@ -438,18 +439,27 @@ Partial Class Form1
         ' Status_lbr
         ' 
         Status_lbr.AutoSize = True
+        Status_lbr.Font = New Font("Segoe UI", 7F)
         Status_lbr.ForeColor = Color.ForestGreen
         Status_lbr.Location = New Point(16, 439)
         Status_lbr.Name = "Status_lbr"
-        Status_lbr.Size = New Size(151, 15)
+        Status_lbr.Size = New Size(125, 12)
         Status_lbr.TabIndex = 24
         Status_lbr.Text = "Status: EZ File Encrypt Redy"
+        ' 
+        ' Status_ProgressBar
+        ' 
+        Status_ProgressBar.Location = New Point(16, 426)
+        Status_ProgressBar.Name = "Status_ProgressBar"
+        Status_ProgressBar.Size = New Size(343, 10)
+        Status_ProgressBar.TabIndex = 25
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(375, 504)
+        Controls.Add(Status_ProgressBar)
         Controls.Add(Status_lbr)
         Controls.Add(Label10)
         Controls.Add(SaveLogBtn)
@@ -523,5 +533,6 @@ Partial Class Form1
     Friend WithEvents Label13 As Label
     Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents Status_lbr As Label
+    Friend WithEvents Status_ProgressBar As ProgressBar
 
 End Class

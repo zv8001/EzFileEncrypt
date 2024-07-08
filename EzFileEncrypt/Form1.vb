@@ -4,6 +4,8 @@ Imports System.IO.Compression
 Imports System.Drawing.Text
 Imports System.Reflection.Metadata.Ecma335
 Imports System.Text
+Imports Microsoft.VisualBasic.Logging
+
 
 'Copyright 2024 ZV800
 
@@ -21,7 +23,7 @@ Imports System.Text
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.2"
+    Dim VersionIdentifier = "v 2.4.3"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -221,35 +223,52 @@ Public Class Form1
                 'added search option all directories to fix this stupid bit of code -zv800
                 Using archive As ZipArchive = ZipFile.Open(Application.StartupPath & "\CreateFrom0Directory.tmp", ZipArchiveMode.Create)
                     Dim files As String() = Directory.GetFileSystemEntries(Inputfile_txt.Text, "*", SearchOption.AllDirectories)
+
+                    ' Set the maximum value of the progress bar
+                    Me.Invoke(Sub() Status_ProgressBar.Maximum = files.Length)
+
+                    Me.Invoke(Sub() Status_ProgressBar.Value = 0)
+
+
+
+
                     For Each file As String In files
                         Try
                             PrintLog("OK: Processing: " & file, False)
                             Dim entryName As String = file.Replace(Inputfile_txt.Text & "\", "")
                             archive.CreateEntryFromFile(file, entryName)
+
+                            ' Increment the progress bar value
+
+                            Me.Invoke(Sub() Status_ProgressBar.Value += 1)
                         Catch ex As Exception
                             PrintLog("ERROR: unexpected error when processing: " & file, False)
                         End Try
-                    Next
-                End Using
+Next
+End Using
+                Me.Invoke(Sub() Status_ProgressBar.Maximum = 100)
 
+                Me.Invoke(Sub() Status_ProgressBar.Value = 50)
                 PrintLog("OK: encrypting: CreateFrom0Directory.tmp", False)
 
                 EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", EncryptionKey)
 
+                Me.Invoke(Sub() Status_ProgressBar.Value = 87)
                 PrintLog("OK: EzFileEncrypt: created", False)
 
                 PrintLog("OK: beginning clean up operations", False)
 
                 My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
                 PrintLog("OK: CreateFrom0Directory.tmp removed", False)
-
+                Me.Invoke(Sub() Status_ProgressBar.Value = 90)
                 My.Computer.FileSystem.DeleteDirectory(Inputfile_txt.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
-
+                Me.Invoke(Sub() Status_ProgressBar.Value = 100)
 
                 PrintLog("OK: main folder removed", False)
                 PrintLog("OK: Done!", False)
 
                 MsgBox("Done!", 0 + 64, "EzFileEncrypt")
+                Me.Invoke(Sub() Status_ProgressBar.Value = 0)
             Catch ex As Exception
                 PrintLog("ERROR: " & ex.Message, True)
                 MsgBox(ex.Message, 0 + 16, "EzFileEncrypt")
@@ -298,7 +317,7 @@ Public Class Form1
             Else
                 Try
                     PrintLog("OK: Decrypting: decrypt0.tmp", False)
-
+                    Me.Invoke(Sub() Status_ProgressBar.Value = 20)
 
                     If DecryptusinglegacyCHK.Checked Then
                         EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
@@ -314,14 +333,14 @@ Public Class Form1
                 End Try
 
                 PrintLog("OK: Creating directory: " & Path.GetFileNameWithoutExtension(TextBox6.Text), False)
-
+                Me.Invoke(Sub() Status_ProgressBar.Value = 25)
                 My.Computer.FileSystem.CreateDirectory(Path.GetFileNameWithoutExtension(TextBox6.Text))
                 Try
                     PrintLog("OK: Extracting files from unencrypted archive... ", False)
 
 
                     ZipFile.ExtractToDirectory("decrypt0.tmp", Path.GetDirectoryName(TextBox6.Text) & "\" & Path.GetFileNameWithoutExtension(TextBox6.Text))
-
+                    Me.Invoke(Sub() Status_ProgressBar.Value = 80)
                     PrintLog("OK: archive extraction successful", False)
 
 
@@ -334,6 +353,7 @@ Public Class Form1
                 PrintLog("OK: deleting decrypt0.tmp", False)
 
                 My.Computer.FileSystem.DeleteFile("decrypt0.tmp")
+                Me.Invoke(Sub() Status_ProgressBar.Value = 100)
                 PrintLog("OK: Done!", False)
 
                 MsgBox("successfully decrypted files", 0 + 64, "EzFileEncrypt")
@@ -345,7 +365,7 @@ Public Class Form1
             PrintLog("OK: ERROR: " & ex.Message, True)
 
         End Try
-
+        Me.Invoke(Sub() Status_ProgressBar.Value = 0)
     End Sub
 
     Private Sub outputlog_list_SelectedIndexChanged(sender As Object, e As EventArgs) Handles outputlog_list.SelectedIndexChanged
