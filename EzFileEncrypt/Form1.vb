@@ -23,7 +23,7 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.5"
+    Dim VersionIdentifier = "v 2.4.6"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -90,15 +90,23 @@ Public Class Form1
 
     End Sub
 
+    Function PrintFailSafeWarn()
+
+    End Function
     Private Sub Encryptbtn_Click(sender As Object, e As EventArgs) Handles Encryptbtn.Click
-        outputlog_list.Items.Add("Calling EncryptBackgoundWorker.RunWorkerAsync()")
-        Try
-            EncryptBackgoundWorker.RunWorkerAsync()
 
-        Catch ex As Exception
-            MsgBox(ex.Message, 0 + 16)
-        End Try
 
+        If Inputfile_txt.Text.StartsWith("C:\Windows") Or Inputfile_txt.Text = "C:\" Or Inputfile_txt.Text.StartsWith("C:\Program Files") Or Inputfile_txt.Text.StartsWith("C:\Program Files (x86)") Or Inputfile_txt.Text.StartsWith("C:\$WINDOWS.~BT") Then
+            MsgBox("FAIL SAFE: USING THIS PATH MAY CAUSE CRITICAL DAMAGE TO WINDOWS THEREFORE YOUR REQUEST HAS NOT GONE THROUGH PLEASE CHOOSE A DIFFERENT PATH", 0 + 16, "FAIL-SAFE WARNING")
+        Else
+            outputlog_list.Items.Add("Calling EncryptBackgoundWorker.RunWorkerAsync()")
+            Try
+                EncryptBackgoundWorker.RunWorkerAsync()
+
+            Catch ex As Exception
+                MsgBox(ex.Message, 0 + 16)
+            End Try
+        End If
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -185,8 +193,8 @@ Public Class Form1
                         Catch ex As Exception
                             PrintLog("ERROR: unexpected error when processing: " & file, False)
                         End Try
-Next
-End Using
+                    Next
+                End Using
                 Me.Invoke(Sub() Status_ProgressBar.Maximum = 100)
 
                 Me.Invoke(Sub() Status_ProgressBar.Value = 50)
@@ -448,6 +456,10 @@ End Using
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Inputfile_txt_TextChanged(sender As Object, e As EventArgs) Handles Inputfile_txt.TextChanged
 
     End Sub
 End Class
