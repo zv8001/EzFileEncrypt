@@ -21,10 +21,14 @@ Imports System.Text
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.1"
+    Dim VersionIdentifier = "v 2.4.2"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            My.Computer.FileSystem.DeleteFile(Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
+        Catch ex As Exception
 
+        End Try
         Try 'Update Code idk
             My.Computer.Network.DownloadFile("https://lucky-paprenjak-2c728d.netlify.app/EzFileEncrypt/bin/Release/net8.0-windows/publish/win-x64/EzFileEncrypt.exe", Path.GetTempPath() & "\EzFileEncrypt_Update.tmp")
 
@@ -39,6 +43,7 @@ Public Class Form1
                     Catch ex As Exception
 
                     End Try
+
                     Try
                         My.Computer.FileSystem.DeleteFile("updater.bat")
                     Catch ex As Exception
