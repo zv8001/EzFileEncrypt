@@ -23,7 +23,7 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 2.4.6"
+    Dim VersionIdentifier = "v 3.0.0"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -225,11 +225,23 @@ Public Class Form1
         End If
     End Sub
 
+    Private Function ComputeSha256Hash(rawData As String) As String
+        Using sha256Hash As SHA256 = SHA256.Create()
+            Dim bytes As Byte() = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData))
+            Dim builder As New StringBuilder()
+            For Each b As Byte In bytes
+                builder.Append(b.ToString("x2"))
+            Next
+            Return builder.ToString()
+        End Using
+    End Function
 
-    Function CreateEncryptionKey(Input) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
+
+    'This runs all the encryption code to create the unique identifiers which are the decryption keys
+    Function CreateEncryptionKey(Input As String) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
         'and you will only be able to decrypt a legacy encryption files & new .EzFileEncrypt files you created with the new function
-
-        Dim a1 As String = StringToBase64(Input)
+        Dim SHA256 As String = ComputeSha256Hash(Input)
+        Dim a1 As String = StringToBase64(SHA256)
         Dim a2 As String = StringToBase64(a1)
         Dim a3 As String = StringToBase64(a2)
         Dim a4 As String = StringToBase64(a3)
@@ -245,7 +257,11 @@ Public Class Form1
         Dim a14 As String = StringToBase64(a13)
         Dim a15 As String = StringToBase64(a14)
         Dim a16 As String = StringToBase64(a15)
-        Return a16
+
+        Dim SHA256_Final As String = ComputeSha256Hash(a16)
+
+        View_final_key.RichTextBox2.Text = a16
+        Return SHA256_Final
 
     End Function
 

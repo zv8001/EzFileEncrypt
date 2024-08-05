@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\applicationevents.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\applicationevents.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -24,14 +32,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|solutionrelative:ezfileencrypt\\view_final_key.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F8EE735-1F5F-46DE-B7C9-24707FCB9168}|EzFileEncrypt\\EzFileEncrypt.vbproj|c:\\users\\denve\\onedrive\\documents\\github\\ezfileencrypt\\ezfileencrypt\\mit_license.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -53,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -69,13 +69,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "View_final_key.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\View_final_key.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb [Design]",
+              "RelativeToolTip": "EzFileEncrypt\\View_final_key.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-07T00:17:17.894Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.vb",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
               "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
               "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAgAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAewB4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T21:20:30.013Z",
               "EditorCaption": ""
@@ -83,18 +95,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
-              "RelativeToolTip": "EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
-              "WhenOpened": "2024-07-08T06:38:29.165Z",
-              "EditorCaption": " - Icon [48x48, 1 bit, BMP]"
+              "Title": "View_final_key.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\View_final_key.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
+              "RelativeToolTip": "EzFileEncrypt\\View_final_key.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-07T00:22:41.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ApplicationEvents.vb",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\ApplicationEvents.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\ApplicationEvents.vb",
@@ -106,7 +118,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
+              "RelativeToolTip": "EzFileEncrypt\\Gakuseisean-Ivista-2-Alarm-Padlock.ico - Icon [48x48, 1 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2024-07-08T06:38:29.165Z",
+              "EditorCaption": " - Icon [48x48, 1 bit, BMP]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "WindowsFormsApplicationBase.vb",
               "DocumentMoniker": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
@@ -120,18 +144,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "View_final_key.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\View_final_key.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
-              "RelativeToolTip": "EzFileEncrypt\\View_final_key.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-07T00:22:41.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MIT_license.vb [Design]",
               "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\MIT_license.vb",
               "RelativeDocumentMoniker": "EzFileEncrypt\\MIT_license.vb",
@@ -139,18 +151,6 @@
               "RelativeToolTip": "EzFileEncrypt\\MIT_license.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-05T02:51:09.589Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "View_final_key.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\View_final_key.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\View_final_key.vb [Design]",
-              "RelativeToolTip": "EzFileEncrypt\\View_final_key.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-07T00:17:17.894Z",
               "EditorCaption": " [Design]"
             },
             {
