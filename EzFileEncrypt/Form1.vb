@@ -23,8 +23,9 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 3.0.1"
+    Dim VersionIdentifier = "v 3.0.2"
     Dim DisableOutput = False
+    Dim Base64Key = ""
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox1.SelectedItem = "EZFileEncrypt encryption method v3 (Latest)"
         PrintLog("Status: ready", False)
@@ -266,7 +267,7 @@ Public Class Form1
         If OLD = True Then
             SHA256_Final = a16
         End If
-
+        Base64Key = a16
         View_final_key.RichTextBox2.Text = a16
 
         Return SHA256_Final
@@ -504,6 +505,20 @@ Public Class Form1
         ElseIf ComboBox1.SelectedItem = "EZFileEncrypt encryption method v2 (Legacy)" Then
             MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (between versions: v2.1.0 - 2.4.6) ", 0 + 48, "Warning")
         End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Dim Key = CreateEncryptionKey(TextBox1.Text, False)
+        TextBox2.Text = Key
+        RichTextBox3.Text = Base64Key
+    End Sub
+
+    Private Sub TabPage4_Click(sender As Object, e As EventArgs) Handles TabPage4.Click
+
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
     End Sub
 End Class
 

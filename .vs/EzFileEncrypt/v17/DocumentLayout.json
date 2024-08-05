@@ -53,21 +53,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.vb",
-              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
-              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
-              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
-              "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-08-05T16:10:34.009Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -77,7 +64,7 @@
               "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb [Design]",
               "RelativeToolTip": "EzFileEncrypt\\Form1.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-08T18:57:52.851Z",
+              "WhenOpened": "2024-08-05T17:52:19.213Z",
               "EditorCaption": " [Design]"
             },
             {
@@ -130,6 +117,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
+              "RelativeDocumentMoniker": "EzFileEncrypt\\Form1.vb",
+              "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.vb",
+              "RelativeToolTip": "EzFileEncrypt\\Form1.vb",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAewBoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-08-05T16:10:34.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "WindowsFormsApplicationBase.vb",
               "DocumentMoniker": "C:\\Users\\denve\\AppData\\Local\\SourceServer\\90de9f99f17a5b0c51d6e8a823489561af93186b9620b788da1669952481b76d\\src\\Microsoft.VisualBasic.Forms\\src\\Microsoft\\VisualBasic\\ApplicationServices\\WindowsFormsApplicationBase.vb",
@@ -152,6 +152,10 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-05T02:51:09.589Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -177,10 +181,6 @@
               "WhenOpened": "2024-07-05T03:10:31.023Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Form1.resx",
@@ -189,7 +189,8 @@
               "ToolTip": "C:\\Users\\denve\\OneDrive\\Documents\\GitHub\\EzFileEncrypt\\EzFileEncrypt\\Form1.resx",
               "RelativeToolTip": "EzFileEncrypt\\Form1.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-07-05T02:54:23.281Z"
+              "WhenOpened": "2024-07-05T02:54:23.281Z",
+              "EditorCaption": ""
             }
           ]
         }

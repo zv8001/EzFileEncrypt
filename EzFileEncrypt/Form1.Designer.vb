@@ -42,6 +42,14 @@ Partial Class Form1
         TextBox6 = New TextBox()
         Button6 = New Button()
         Label7 = New Label()
+        TabPage4 = New TabPage()
+        Label17 = New Label()
+        RichTextBox3 = New RichTextBox()
+        Label16 = New Label()
+        TextBox2 = New TextBox()
+        Label15 = New Label()
+        TextBox1 = New TextBox()
+        Label14 = New Label()
         TabPage3 = New TabPage()
         RichTextBox2 = New RichTextBox()
         LinkLabel1 = New LinkLabel()
@@ -70,6 +78,7 @@ Partial Class Form1
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
+        TabPage4.SuspendLayout()
         TabPage3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +88,7 @@ Partial Class Form1
         ' 
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
+        TabControl1.Controls.Add(TabPage4)
         TabControl1.Controls.Add(TabPage3)
         TabControl1.Location = New Point(12, 65)
         TabControl1.Name = "TabControl1"
@@ -117,7 +127,7 @@ Partial Class Form1
         ' 
         TextBox3.Location = New Point(6, 178)
         TextBox3.Name = "TextBox3"
-        TextBox3.PlaceholderText = "Put encryption key here"
+        TextBox3.PlaceholderText = "Put password here"
         TextBox3.Size = New Size(331, 23)
         TextBox3.TabIndex = 10
         ' 
@@ -208,7 +218,7 @@ Partial Class Form1
         ' 
         TextBox4.Location = New Point(6, 180)
         TextBox4.Name = "TextBox4"
-        TextBox4.PlaceholderText = "Put encryption key here"
+        TextBox4.PlaceholderText = "Put password here"
         TextBox4.Size = New Size(331, 23)
         TextBox4.TabIndex = 19
         ' 
@@ -256,6 +266,82 @@ Partial Class Form1
         Label7.Size = New Size(134, 33)
         Label7.TabIndex = 11
         Label7.Text = "DECRYPT"
+        ' 
+        ' TabPage4
+        ' 
+        TabPage4.Controls.Add(Label17)
+        TabPage4.Controls.Add(RichTextBox3)
+        TabPage4.Controls.Add(Label16)
+        TabPage4.Controls.Add(TextBox2)
+        TabPage4.Controls.Add(Label15)
+        TabPage4.Controls.Add(TextBox1)
+        TabPage4.Controls.Add(Label14)
+        TabPage4.Location = New Point(4, 24)
+        TabPage4.Name = "TabPage4"
+        TabPage4.Size = New Size(343, 242)
+        TabPage4.TabIndex = 3
+        TabPage4.Text = "EncryptKeyDemo"
+        TabPage4.UseVisualStyleBackColor = True
+        ' 
+        ' Label17
+        ' 
+        Label17.AutoSize = True
+        Label17.Location = New Point(6, 146)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(82, 15)
+        Label17.TabIndex = 6
+        Label17.Text = "Base64 output"
+        ' 
+        ' RichTextBox3
+        ' 
+        RichTextBox3.Location = New Point(6, 164)
+        RichTextBox3.Name = "RichTextBox3"
+        RichTextBox3.ReadOnly = True
+        RichTextBox3.Size = New Size(337, 69)
+        RichTextBox3.TabIndex = 5
+        RichTextBox3.Text = ""
+        ' 
+        ' Label16
+        ' 
+        Label16.AutoSize = True
+        Label16.Location = New Point(6, 102)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(97, 15)
+        Label16.TabIndex = 4
+        Label16.Text = "SHA-256 Output:"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(6, 120)
+        TextBox2.Name = "TextBox2"
+        TextBox2.ReadOnly = True
+        TextBox2.Size = New Size(337, 23)
+        TextBox2.TabIndex = 3
+        ' 
+        ' Label15
+        ' 
+        Label15.AutoSize = True
+        Label15.Location = New Point(6, 58)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(60, 15)
+        Label15.TabIndex = 2
+        Label15.Text = "Password:"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(6, 76)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(337, 23)
+        TextBox1.TabIndex = 1
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.Location = New Point(3, 4)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(232, 45)
+        Label14.TabIndex = 0
+        Label14.Text = "Encryption key demo:" & vbCrLf & "this uses the real encryption key generator " & vbCrLf & "***DO NOT SHARE OUTPUT***" & vbCrLf
         ' 
         ' TabPage3
         ' 
@@ -482,6 +568,8 @@ Partial Class Form1
         TabPage1.PerformLayout()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
+        TabPage4.ResumeLayout(False)
+        TabPage4.PerformLayout()
         TabPage3.ResumeLayout(False)
         TabPage3.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -533,5 +621,13 @@ Partial Class Form1
     Friend WithEvents Status_lbr As Label
     Friend WithEvents Status_ProgressBar As ProgressBar
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents Label17 As Label
+    Friend WithEvents RichTextBox3 As RichTextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label14 As Label
 
 End Class
