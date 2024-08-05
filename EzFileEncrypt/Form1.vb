@@ -23,15 +23,15 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 3.0.0"
+    Dim VersionIdentifier = "v 3.0.1"
     Dim DisableOutput = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ComboBox1.SelectedItem = "EZFileEncrypt encryption method v3 (Latest)"
         PrintLog("Status: ready", False)
         MIT_license.ShowDialog()
         Label10.Text = VersionIdentifier
         Label12.Text = VersionIdentifier
-
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         Try
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
         Catch ex As Exception
@@ -160,7 +160,7 @@ Public Class Form1
 
             Try
 
-                Dim EncryptionKey = CreateEncryptionKey(TextBox3.Text)
+                Dim EncryptionKey = CreateEncryptionKey(TextBox3.Text, False)
 
                 View_final_key.RichTextBox1.Text = EncryptionKey
                 View_final_key.ShowDialog()
@@ -173,7 +173,6 @@ Public Class Form1
                 Using archive As ZipArchive = ZipFile.Open(Application.StartupPath & "\CreateFrom0Directory.tmp", ZipArchiveMode.Create)
                     Dim files As String() = Directory.GetFileSystemEntries(Inputfile_txt.Text, "*", SearchOption.AllDirectories)
 
-                    ' Set the maximum value of the progress bar
                     Me.Invoke(Sub() Status_ProgressBar.Maximum = files.Length)
 
                     Me.Invoke(Sub() Status_ProgressBar.Value = 0)
@@ -186,8 +185,6 @@ Public Class Form1
                             PrintLog("OK: Processing: " & file, False)
                             Dim entryName As String = file.Replace(Inputfile_txt.Text & "\", "")
                             archive.CreateEntryFromFile(file, entryName)
-
-                            ' Increment the progress bar value
 
                             Me.Invoke(Sub() Status_ProgressBar.Value += 1)
                         Catch ex As Exception
@@ -238,9 +235,15 @@ Public Class Form1
 
 
     'This runs all the encryption code to create the unique identifiers which are the decryption keys
-    Function CreateEncryptionKey(Input As String) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
+    Function CreateEncryptionKey(Input As String, OLD As Boolean) 'if you change this function it will break compatibility with already existing .EzFileEncrypt files
         'and you will only be able to decrypt a legacy encryption files & new .EzFileEncrypt files you created with the new function
+
         Dim SHA256 As String = ComputeSha256Hash(Input)
+
+        If OLD = True Then
+            SHA256 = Input
+        End If
+
         Dim a1 As String = StringToBase64(SHA256)
         Dim a2 As String = StringToBase64(a1)
         Dim a3 As String = StringToBase64(a2)
@@ -260,7 +263,12 @@ Public Class Form1
 
         Dim SHA256_Final As String = ComputeSha256Hash(a16)
 
+        If OLD = True Then
+            SHA256_Final = a16
+        End If
+
         View_final_key.RichTextBox2.Text = a16
+
         Return SHA256_Final
 
     End Function
@@ -271,8 +279,10 @@ Public Class Form1
 
         Try
 
-            Dim EncryptionKey = CreateEncryptionKey(TextBox4.Text)
+            Dim EncryptionKey = CreateEncryptionKey(TextBox4.Text, False)
             Dim LegacyEncryptionKey = TextBox4.Text
+            Dim LegacyEncryptionKeyv2 = CreateEncryptionKey(TextBox4.Text, True)
+
 
             If TextBox4.Text = "" Then
                 MsgBox("A decryption key is needed", 0 + 16, "EzFileEncrypt")
@@ -283,15 +293,27 @@ Public Class Form1
                 Try
                     PrintLog("OK: Decrypting: decrypt0.tmp", False)
                     Me.Invoke(Sub() Status_ProgressBar.Value = 20)
+                    Dim selectedItem As String = String.Empty
 
-                    If DecryptusinglegacyCHK.Checked Then
+                    Me.Invoke(New Action(Sub() selectedItem = ComboBox1.SelectedItem.ToString()))
+
+
+                    If selectedItem = "EZFileEncrypt encryption method v1 (Legacy)" Then
                         EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
-                    Else
+
+                    ElseIf selectedItem = "EZFileEncrypt encryption method v3 (Latest)" Then
+
                         EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", EncryptionKey)
+
+
+                    ElseIf selectedItem = "EZFileEncrypt encryption method v2 (Legacy)" Then
+                        EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKeyv2)
                     End If
 
+
+
                 Catch ex As Exception
-                    MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", 0 + 16, "EzFileEncrypt")
+                    MsgBox("EncryptDecryptFile.DecryptFile() function failure please check your decryption key. FULL ERROR: " & ex.Message, 0 + 16, "EzFileEncrypt")
 
                     PrintLog("ERROR: Decrypting: EncryptDecryptFile.DecryptFile() function failure please check your decryption key.", True)
 
@@ -461,11 +483,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DecryptusinglegacyCHK_CheckedChanged(sender As Object, e As EventArgs) Handles DecryptusinglegacyCHK.CheckedChanged
-        If DecryptusinglegacyCHK.Checked Then
-            MsgBox("This option is only to decrypt files that have been encrypted with the older EzFileEncrypt v 2.0.0 and older. If you have files encrypted in the older versions it is recommended you re-encrypt them with the new versions.", 0 + 48, "EzFileEncrypt")
-        End If
-    End Sub
+
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
 
@@ -477,6 +495,15 @@ Public Class Form1
 
     Private Sub Inputfile_txt_TextChanged(sender As Object, e As EventArgs) Handles Inputfile_txt.TextChanged
 
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        ' ComboBox1.DropDownStyle =
+        If ComboBox1.SelectedItem = "EZFileEncrypt encryption method v1 (Legacy)" Then
+            MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (v2.0.0 and earlier) ", 0 + 48, "Warning")
+        ElseIf ComboBox1.SelectedItem = "EZFileEncrypt encryption method v2 (Legacy)" Then
+            MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (between versions: v2.1.0 - 2.4.6) ", 0 + 48, "Warning")
+        End If
     End Sub
 End Class
 

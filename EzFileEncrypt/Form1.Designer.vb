@@ -34,7 +34,7 @@ Partial Class Form1
         SelInputFileBtn = New Button()
         Label2 = New Label()
         TabPage2 = New TabPage()
-        DecryptusinglegacyCHK = New CheckBox()
+        ComboBox1 = New ComboBox()
         Label9 = New Label()
         TextBox4 = New TextBox()
         Button4 = New Button()
@@ -169,7 +169,7 @@ Partial Class Form1
         ' TabPage2
         ' 
         TabPage2.BorderStyle = BorderStyle.Fixed3D
-        TabPage2.Controls.Add(DecryptusinglegacyCHK)
+        TabPage2.Controls.Add(ComboBox1)
         TabPage2.Controls.Add(Label9)
         TabPage2.Controls.Add(TextBox4)
         TabPage2.Controls.Add(Button4)
@@ -185,15 +185,14 @@ Partial Class Form1
         TabPage2.Text = "Decrypt"
         TabPage2.UseVisualStyleBackColor = True
         ' 
-        ' DecryptusinglegacyCHK
+        ' ComboBox1
         ' 
-        DecryptusinglegacyCHK.AutoSize = True
-        DecryptusinglegacyCHK.Location = New Point(6, 116)
-        DecryptusinglegacyCHK.Name = "DecryptusinglegacyCHK"
-        DecryptusinglegacyCHK.Size = New Size(254, 19)
-        DecryptusinglegacyCHK.TabIndex = 22
-        DecryptusinglegacyCHK.Text = "Decrypt using legacy .EZFileEncrypt Format"
-        DecryptusinglegacyCHK.UseVisualStyleBackColor = True
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Items.AddRange(New Object() {"EZFileEncrypt encryption method v1 (Legacy)", "EZFileEncrypt encryption method v2 (Legacy)", "EZFileEncrypt encryption method v3 (Latest)"})
+        ComboBox1.Location = New Point(6, 112)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(327, 23)
+        ComboBox1.TabIndex = 23
         ' 
         ' Label9
         ' 
@@ -201,9 +200,9 @@ Partial Class Form1
         Label9.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(6, 138)
         Label9.Name = "Label9"
-        Label9.Size = New Size(314, 39)
+        Label9.Size = New Size(320, 26)
         Label9.TabIndex = 20
-        Label9.Text = "If you encrypted your files in EZ File Encrypt v2.0.0 or earlier " & vbCrLf & "select this checkbox. because the internal decryption key " & vbCrLf & "will be different."
+        Label9.Text = "Do not change the encryption method unless you encrypted " & vbCrLf & "your files in an earlier version of the program."
         ' 
         ' TextBox4
         ' 
@@ -523,7 +522,6 @@ Partial Class Form1
     Friend WithEvents MoveListBox As Timer
     Friend WithEvents SaveLogBtn As Button
     Friend WithEvents CheckIfEncryptIsBusy As Timer
-    Friend WithEvents DecryptusinglegacyCHK As CheckBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label12 As Label
@@ -534,5 +532,6 @@ Partial Class Form1
     Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents Status_lbr As Label
     Friend WithEvents Status_ProgressBar As ProgressBar
+    Friend WithEvents ComboBox1 As ComboBox
 
 End Class
