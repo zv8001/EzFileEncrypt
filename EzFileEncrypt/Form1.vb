@@ -23,7 +23,7 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 4.0.0"
+    Dim VersionIdentifier = "v 4.0.1"
     Dim DisableOutput = False
     Dim Base64Key = ""
     Public salt As Byte() = New Byte(31) {}
@@ -126,7 +126,7 @@ Public Class Form1
                     End Try
                 End If
             Case DialogResult.No
-                MessageBox.Show("You chose No")
+
         End Select
 
 
@@ -572,9 +572,9 @@ Public Class Form1
         If deletionpasses_Dropdown.SelectedItem = "SecureDelete 1 pass" Then
 
         ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 3 passes" Then
-            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 46)
+            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 48)
         ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 10 passes" Then
-            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 46)
+            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 48)
         End If
     End Sub
 End Class

@@ -34,8 +34,6 @@ Partial Class GenSalt
         FINALKeyTXT = New Label()
         GroupBox2 = New GroupBox()
         Button1 = New Button()
-        ShowCSPRNGCHK = New CheckBox()
-        Label5 = New Label()
         ProgressBar12 = New CustomProgressBar()
         MouseMoved = New Timer(components)
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +63,7 @@ Partial Class GenSalt
         ' 
         ' Label3
         ' 
-        Label3.Font = New Font("Segoe UI", 6.0F)
+        Label3.Font = New Font("Segoe UI", 6F)
         Label3.Location = New Point(6, 19)
         Label3.Name = "Label3"
         Label3.Size = New Size(331, 119)
@@ -119,53 +117,30 @@ Partial Class GenSalt
         ' 
         ' GroupBox2
         ' 
-        GroupBox2.Controls.Add(Button1)
-        GroupBox2.Controls.Add(ShowCSPRNGCHK)
-        GroupBox2.Controls.Add(Label5)
-        GroupBox2.Controls.Add(ProgressBar12)
         GroupBox2.Controls.Add(ShakeyTXT)
         GroupBox2.Controls.Add(FINALKeyTXT)
         GroupBox2.Location = New Point(12, 246)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(536, 95)
+        GroupBox2.Size = New Size(536, 58)
         GroupBox2.TabIndex = 11
         GroupBox2.TabStop = False
         GroupBox2.Text = "Data"
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(455, 66)
+        Button1.Location = New Point(473, 319)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 12
         Button1.Text = "Next >"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' ShowCSPRNGCHK
-        ' 
-        ShowCSPRNGCHK.AutoSize = True
-        ShowCSPRNGCHK.Location = New Point(346, 69)
-        ShowCSPRNGCHK.Name = "ShowCSPRNGCHK"
-        ShowCSPRNGCHK.Size = New Size(103, 19)
-        ShowCSPRNGCHK.TabIndex = 14
-        ShowCSPRNGCHK.Text = "Show CSPRNG"
-        ShowCSPRNGCHK.UseVisualStyleBackColor = True
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(6, 49)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(78, 15)
-        Label5.TabIndex = 13
-        Label5.Text = "CSPRNG: unk"
-        ' 
         ' ProgressBar12
         ' 
-        ProgressBar12.Location = New Point(6, 79)
+        ProgressBar12.Location = New Point(18, 319)
         ProgressBar12.Name = "ProgressBar12"
         ProgressBar12.ProgressBarColor = Color.OrangeRed
-        ProgressBar12.Size = New Size(334, 10)
+        ProgressBar12.Size = New Size(449, 23)
         ProgressBar12.TabIndex = 12
         ProgressBar12.Value = 8
         ' 
@@ -175,9 +150,11 @@ Partial Class GenSalt
         ' 
         ' GenSalt
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(560, 353)
+        Controls.Add(ProgressBar12)
+        Controls.Add(Button1)
         Controls.Add(GroupBox2)
         Controls.Add(Label4)
         Controls.Add(GroupBox1)
@@ -214,7 +191,5 @@ Partial Class GenSalt
     Friend WithEvents Button1 As Button
 
     Friend WithEvents ProgressBar12 As CustomProgressBar
-    Friend WithEvents ShowCSPRNGCHK As CheckBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents MouseMoved As Timer
 End Class
