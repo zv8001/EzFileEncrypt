@@ -23,16 +23,21 @@ Imports Microsoft.VisualBasic.Logging
 
 
 Public Class Form1
-    Dim VersionIdentifier = "v 3.0.2"
+    Dim VersionIdentifier = "v 4.0.0"
     Dim DisableOutput = False
     Dim Base64Key = ""
+    Public salt As Byte() = New Byte(31) {}
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox1.SelectedItem = "EZFileEncrypt encryption method v3 (Latest)"
+        ComboBox1.SelectedItem = "EZFileEncrypt encryption method v4 (Latest)"
+        deletionpasses_Dropdown.SelectedItem = "SecureDelete 1 pass"
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        deletionpasses_Dropdown.DropDownStyle = ComboBoxStyle.DropDownList
+
         PrintLog("Status: ready", False)
         MIT_license.ShowDialog()
         Label10.Text = VersionIdentifier
         Label12.Text = VersionIdentifier
-        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+
         Try
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\CreateFrom0Directory.tmp")
         Catch ex As Exception
@@ -75,6 +80,9 @@ Public Class Form1
         End If
 
     End Sub
+
+
+
     Private Sub SelInputFileBtn_Click(sender As Object, e As EventArgs) Handles SelInputFileBtn.Click
 
 
@@ -96,18 +104,32 @@ Public Class Form1
     End Function
     Private Sub Encryptbtn_Click(sender As Object, e As EventArgs) Handles Encryptbtn.Click
 
+        Dim message As String = "Once you start the encryption once the program closes due to a crash or other means your files will be corrupted & unrecoverable. Would you like to continue?"
+        Dim title As String = "WARNING"
 
-        If Inputfile_txt.Text.StartsWith("C:\Windows") Or Inputfile_txt.Text = "C:\" Or Inputfile_txt.Text.StartsWith("C:\Program Files") Or Inputfile_txt.Text.StartsWith("C:\Program Files (x86)") Or Inputfile_txt.Text.StartsWith("C:\$WINDOWS.~BT") Then
-            MsgBox("FAIL SAFE: USING THIS PATH MAY CAUSE CRITICAL DAMAGE TO WINDOWS THEREFORE YOUR REQUEST HAS NOT GONE THROUGH PLEASE CHOOSE A DIFFERENT PATH", 0 + 16, "FAIL-SAFE WARNING")
-        Else
-            outputlog_list.Items.Add("Calling EncryptBackgoundWorker.RunWorkerAsync()")
-            Try
-                EncryptBackgoundWorker.RunWorkerAsync()
+        ' Show the message box with Yes, No, and Cancel buttons
+        Dim result As DialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-            Catch ex As Exception
-                MsgBox(ex.Message, 0 + 16)
-            End Try
-        End If
+        ' Handle the result
+        Select Case result
+            Case DialogResult.Yes
+                If Inputfile_txt.Text.StartsWith("C:\Windows") Or Inputfile_txt.Text = "C:\" Or Inputfile_txt.Text.StartsWith("C:\Program Files") Or Inputfile_txt.Text.StartsWith("C:\Program Files (x86)") Or Inputfile_txt.Text.StartsWith("C:\$WINDOWS.~BT") Then
+                    MsgBox("FAIL SAFE: USING THIS PATH MAY CAUSE CRITICAL DAMAGE TO WINDOWS THEREFORE YOUR REQUEST HAS NOT GONE THROUGH PLEASE CHOOSE A DIFFERENT PATH", 0 + 16, "FAIL-SAFE WARNING")
+                Else
+                    outputlog_list.Items.Add("Calling EncryptBackgoundWorker.RunWorkerAsync()")
+                    Try
+                        GenSalt.ShowDialog()
+                        EncryptBackgoundWorker.RunWorkerAsync()
+
+                    Catch ex As Exception
+                        MsgBox(ex.Message, 0 + 16)
+                    End Try
+                End If
+            Case DialogResult.No
+                MessageBox.Show("You chose No")
+        End Select
+
+
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -147,8 +169,29 @@ Public Class Form1
         End Try
 
     End Sub
+    Private Sub SecureDelete(filePath As String, passes As Integer)
+        If File.Exists(filePath) Then
+            Dim fileLength As Long = New FileInfo(filePath).Length
+            For i As Integer = 1 To passes
+                Dim randomData(fileLength - 1) As Byte
+                Using rng As New RNGCryptoServiceProvider()
+                    rng.GetBytes(randomData)
+                End Using
+                File.WriteAllBytes(filePath, randomData)
+            Next
 
-
+            File.Delete(filePath)
+        End If
+    End Sub
+    Private Sub SD(File As String)
+        If deletionpasses_Dropdown.SelectedItem = "SecureDelete 1 pass" Then
+            SecureDelete(File, 1)
+        ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 3 passes" Then
+            SecureDelete(File, 3)
+        ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 10 passes" Then
+            SecureDelete(File, 10)
+        End If
+    End Sub
     Private Sub EncryptBackgoundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles EncryptBackgoundWorker.DoWork
 
 
@@ -187,9 +230,14 @@ Public Class Form1
                             Dim entryName As String = file.Replace(Inputfile_txt.Text & "\", "")
                             archive.CreateEntryFromFile(file, entryName)
 
+                            PrintLog("OK: Secure deleting: " & file, False)
+
+                            Me.Invoke(Sub() SD(file))
+
+
                             Me.Invoke(Sub() Status_ProgressBar.Value += 1)
                         Catch ex As Exception
-                            PrintLog("ERROR: unexpected error when processing: " & file, False)
+                            PrintLog("ERROR: unexpected error when processing: " & file & "FULL ERROR: " & ex.Message, False)
                         End Try
                     Next
                 End Using
@@ -198,7 +246,7 @@ Public Class Form1
                 Me.Invoke(Sub() Status_ProgressBar.Value = 50)
                 PrintLog("OK: encrypting: CreateFrom0Directory.tmp", False)
 
-                EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", EncryptionKey)
+                EncryptDecryptFile.EncryptFile(Application.StartupPath & "\CreateFrom0Directory.tmp", Inputfile_txt.Text & ".EzFileEncrypt", EncryptionKey, Me.salt)
 
                 Me.Invoke(Sub() Status_ProgressBar.Value = 87)
                 PrintLog("OK: EzFileEncrypt: created", False)
@@ -300,15 +348,13 @@ Public Class Form1
 
 
                     If selectedItem = "EZFileEncrypt encryption method v1 (Legacy)" Then
-                        EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
-
-                    ElseIf selectedItem = "EZFileEncrypt encryption method v3 (Latest)" Then
-
+                        EncryptDecryptFile.DecryptFile2(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKey)
+                    ElseIf selectedItem = "EZFileEncrypt encryption method v3 (Legacy)" Then
+                        EncryptDecryptFile.DecryptFile2(TextBox6.Text, "decrypt0.tmp", EncryptionKey)
+                    ElseIf selectedItem = "EZFileEncrypt encryption method v4 (Latest)" Then
                         EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", EncryptionKey)
-
-
                     ElseIf selectedItem = "EZFileEncrypt encryption method v2 (Legacy)" Then
-                        EncryptDecryptFile.DecryptFile(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKeyv2)
+                        EncryptDecryptFile.DecryptFile2(TextBox6.Text, "decrypt0.tmp", LegacyEncryptionKeyv2)
                     End If
 
 
@@ -499,11 +545,12 @@ Public Class Form1
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        ' ComboBox1.DropDownStyle =
         If ComboBox1.SelectedItem = "EZFileEncrypt encryption method v1 (Legacy)" Then
             MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (v2.0.0 and earlier) ", 0 + 48, "Warning")
         ElseIf ComboBox1.SelectedItem = "EZFileEncrypt encryption method v2 (Legacy)" Then
-            MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (between versions: v2.1.0 - 2.4.6) ", 0 + 48, "Warning")
+            MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (between versions: v2.1.0 - v2.4.6) ", 0 + 48, "Warning")
+        ElseIf ComboBox1.SelectedItem = "EZFileEncrypt encryption method v3 (Legacy)" Then
+            MsgBox("This is a legacy format and will only work for files encrypted with earlier versions of the software (between versions: v3.0.0 - v3.0.2) ", 0 + 48, "Warning")
         End If
     End Sub
 
@@ -520,14 +567,24 @@ Public Class Form1
     Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
     End Sub
+
+    Private Sub deletionpasses_Dropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles deletionpasses_Dropdown.SelectedIndexChanged
+        If deletionpasses_Dropdown.SelectedItem = "SecureDelete 1 pass" Then
+
+        ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 3 passes" Then
+            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 46)
+        ElseIf deletionpasses_Dropdown.SelectedItem = "SecureDelete 10 passes" Then
+            MsgBox("SecureDelete will double the time depending on the amount of passes so three passes will make the program take triple the amount of time. This can take a very long time", 0 + 46)
+        End If
+    End Sub
 End Class
+
 
 
 
 
 Public Class EncryptDecryptFile
     Private Shared Function CreateAes(ByVal password As String, ByVal salt As Byte()) As Aes
-
         Dim hashAlgorithm As HashAlgorithmName = HashAlgorithmName.SHA256
         Dim iterations As Integer = 10000
 
@@ -538,11 +595,14 @@ Public Class EncryptDecryptFile
         Return aes
     End Function
 
-    Public Shared Sub EncryptFile(ByVal inputFile As String, ByVal outputFile As String, ByVal password As String)
-        Dim aes As Aes = CreateAes(password, New Byte() {1, 2, 3, 4, 5, 6, 7, 8})
+    Public Shared Sub EncryptFile(ByVal inputFile As String, ByVal outputFile As String, ByVal password As String, ByVal salt As Byte())
+        Dim aes As Aes = CreateAes(password, salt)
         Using aes
             Using inStream As New FileStream(inputFile, FileMode.Open, FileAccess.Read)
                 Using outStream As New FileStream(outputFile, FileMode.OpenOrCreate, FileAccess.Write)
+                    ' Write the salt to the beginning of the output file
+                    outStream.Write(salt, 0, salt.Length)
+
                     Dim transformer As ICryptoTransform = aes.CreateEncryptor()
                     Using cryptStream As New CryptoStream(outStream, transformer, CryptoStreamMode.Write)
                         inStream.CopyTo(cryptStream)
@@ -553,6 +613,24 @@ Public Class EncryptDecryptFile
     End Sub
 
     Public Shared Sub DecryptFile(ByVal inputFile As String, ByVal outputFile As String, ByVal password As String)
+        Using inStream As New FileStream(inputFile, FileMode.Open, FileAccess.Read)
+            ' Read the salt from the beginning of the input file
+            Dim salt As Byte() = New Byte(31) {}
+            inStream.Read(salt, 0, salt.Length)
+
+            Dim aes As Aes = CreateAes(password, salt)
+            Using aes
+                Using outStream As New FileStream(outputFile, FileMode.OpenOrCreate, FileAccess.Write)
+                    Dim transformer As ICryptoTransform = aes.CreateDecryptor()
+                    Using cryptStream As New CryptoStream(inStream, transformer, CryptoStreamMode.Read)
+                        cryptStream.CopyTo(outStream)
+                    End Using
+                End Using
+            End Using
+        End Using
+    End Sub
+
+    Public Shared Sub DecryptFile2(ByVal inputFile As String, ByVal outputFile As String, ByVal password As String)
         Dim aes As Aes = CreateAes(password, New Byte() {1, 2, 3, 4, 5, 6, 7, 8})
         Using aes
             Using inStream As New FileStream(inputFile, FileMode.Open, FileAccess.Read)

@@ -26,6 +26,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        deletionpasses_Dropdown = New ComboBox()
         Label8 = New Label()
         TextBox3 = New TextBox()
         Encryptbtn = New Button()
@@ -99,6 +100,7 @@ Partial Class Form1
         ' TabPage1
         ' 
         TabPage1.BorderStyle = BorderStyle.Fixed3D
+        TabPage1.Controls.Add(deletionpasses_Dropdown)
         TabPage1.Controls.Add(Label8)
         TabPage1.Controls.Add(TextBox3)
         TabPage1.Controls.Add(Encryptbtn)
@@ -114,10 +116,19 @@ Partial Class Form1
         TabPage1.Text = "Encrypt"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' deletionpasses_Dropdown
+        ' 
+        deletionpasses_Dropdown.FormattingEnabled = True
+        deletionpasses_Dropdown.Items.AddRange(New Object() {"SECURE DELETE OFF", "SecureDelete 1 pass", "SecureDelete 3 passes", "SecureDelete 10 passes"})
+        deletionpasses_Dropdown.Location = New Point(129, 207)
+        deletionpasses_Dropdown.Name = "deletionpasses_Dropdown"
+        deletionpasses_Dropdown.Size = New Size(204, 23)
+        deletionpasses_Dropdown.TabIndex = 12
+        ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(3, 120)
+        Label8.Location = New Point(6, 121)
         Label8.Name = "Label8"
         Label8.Size = New Size(334, 45)
         Label8.TabIndex = 11
@@ -135,7 +146,7 @@ Partial Class Form1
         ' 
         Encryptbtn.Location = New Point(6, 207)
         Encryptbtn.Name = "Encryptbtn"
-        Encryptbtn.Size = New Size(331, 23)
+        Encryptbtn.Size = New Size(117, 23)
         Encryptbtn.TabIndex = 9
         Encryptbtn.Text = "Encrypt"
         Encryptbtn.UseVisualStyleBackColor = True
@@ -198,7 +209,7 @@ Partial Class Form1
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"EZFileEncrypt encryption method v1 (Legacy)", "EZFileEncrypt encryption method v2 (Legacy)", "EZFileEncrypt encryption method v3 (Latest)"})
+        ComboBox1.Items.AddRange(New Object() {"EZFileEncrypt encryption method v1 (Legacy)", "EZFileEncrypt encryption method v2 (Legacy)", "EZFileEncrypt encryption method v3 (Legacy)", "EZFileEncrypt encryption method v4 (Latest)"})
         ComboBox1.Location = New Point(6, 112)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(327, 23)
@@ -629,5 +640,6 @@ Partial Class Form1
     Friend WithEvents Label15 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents deletionpasses_Dropdown As ComboBox
 
 End Class

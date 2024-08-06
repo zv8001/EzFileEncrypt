@@ -36,3 +36,4 @@ C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Release
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Release\net8.0-windows\EzFileEncrypt.genruntimeconfig.cache
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Release\net8.0-windows\ref\EzFileEncrypt.dll
 C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Release\net8.0-windows\EzFileEncrypt.View_final_key.resources
+C:\Users\denve\OneDrive\Documents\GitHub\EzFileEncrypt\EzFileEncrypt\obj\Release\net8.0-windows\EzFileEncrypt.GenSalt.resources
